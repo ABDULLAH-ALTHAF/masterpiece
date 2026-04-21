@@ -22,137 +22,276 @@
 
       <!-- Navigation Links -->
       <!-- Navigation Links with Dropdown -->
-      <div style="display:flex; gap:2.2rem; font-weight:500; color:#1e3a8a;">
+      <div
+        style="display:flex; gap:0; font-weight:500; background:#fff; border-bottom:1px solid #e5e7eb; padding:0 1.5rem;">
 
         <!-- Translation -->
-        <div style="position:relative;" onmouseover="this.children[1].style.display='block'"
-          onmouseout="this.children[1].style.display='none'">
-          <a href="#" style="text-decoration:none; color:#1e3a8a;">Translation</a>
+        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+          onmouseout="this.querySelector('.dd').style.display='none'">
           <div
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; padding:10px; min-width:230px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px;">
+            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
+            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
+            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+            Translation
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="dd"
+            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:320px; z-index:100; display:none; grid-template-columns:1fr 1fr;">
             <a href="legal-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Legal Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Translation</a>
             <a href="interpretation-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Interpretation Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Interpretation</a>
             <a href="technical-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Technical Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Technical Translation</a>
             <a href="medical-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Medical Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Translation</a>
             <a href="financial-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Financial Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Financial Translation</a>
             <a href="software-localization.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Software Localization</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Software Localization</a>
             <a href="scientific-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Scientific Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Scientific Translation</a>
             <a href="sworn-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Sworn Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Translation</a>
             <a href="certified-translation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Certified Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Certified Translation</a>
             <a href="website-localisation.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Website Localisation</a>
-            <a href="poa-translation.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">POA
-              Translation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Website Localisation</a>
+            <a href="poa-translation.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">POA Translation</a>
           </div>
         </div>
 
         <!-- Attestation -->
-        <div style="position:relative;" onmouseover="this.children[1].style.display='block'"
-          onmouseout="this.children[1].style.display='none'">
-          <a href="#" style="text-decoration:none; color:#1e3a8a;">Attestation</a>
+        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='grid'"
+          onmouseout="this.querySelector('.dd').style.display='none'">
           <div
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; padding:10px; min-width:230px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px;">
+            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
+            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
+            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+            Attestation
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="dd"
+            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:320px; z-index:100; grid-template-columns:1fr 1fr;">
             <a href="educational.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Educational Certificates</a>
-            <a href="marriage.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Marriage
-              Certificate</a>
-            <a href="birth.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Birth
-              Certificate</a>
-            <a href="medical.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Medical
-              Certificates</a>
-            <a href="degree.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Degree
-              Certificate</a>
-            <a href="diploma.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Diploma
-              Certificates</a>
-            <a href="death.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Death
-              Certificate</a>
-            <a href="uk.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">UK
-              Certificate</a>
-            <a href="usa.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">USA
-              Certificate</a>
-            <a href="indian.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Indian
-              Certificate</a>
-            <a href="mofa.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">MOFA
-              Attestation</a>
-            <a href="pakistan.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Pakistan
-              Attestation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Educational Certificates</a>
+            <a href="marriage.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Marriage Certificate</a>
+            <a href="birth.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Birth Certificate</a>
+            <a href="medical.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Certificates</a>
+            <a href="degree.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Degree Certificate</a>
+            <a href="diploma.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Diploma Certificates</a>
+            <a href="death.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Death Certificate</a>
+            <a href="uk.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">UK Certificate</a>
+            <a href="usa.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">USA Certificate</a>
+            <a href="indian.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Indian Certificate</a>
+            <a href="mofa.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOFA Attestation</a>
+            <a href="pakistan.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Pakistan Attestation</a>
             <a href="philippines.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Philippines Attestation</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Philippines Attestation</a>
           </div>
         </div>
 
         <!-- Business Setup -->
-        <div style="position:relative;" onmouseover="this.children[1].style.display='block'"
-          onmouseout="this.children[1].style.display='none'">
-          <a href="#" style="text-decoration:none; color:#1e3a8a;">Business Setup</a>
+        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+          onmouseout="this.querySelector('.dd').style.display='none'">
           <div
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; padding:10px; min-width:230px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px;">
-            <a href="freezone.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Free Zone
-              Business</a>
-            <a href="mainland.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Mainland
-              Business</a>
-            <a href="offshore.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Offshore
-              Business</a>
-            <a href="trademark.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Trademark
-              Registration</a>
-            <a href="bank.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Company Bank
-              Account</a>
+            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
+            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
+            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+            Business Setup
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="dd"
+            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
+            <a href="freezone.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Free Zone Business</a>
+            <a href="mainland.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Mainland Business</a>
+            <a href="offshore.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Offshore Business</a>
+            <a href="trademark.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Trademark Registration</a>
+            <a href="bank.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Company Bank Account</a>
           </div>
         </div>
 
         <!-- Visa -->
-        <div style="position:relative;" onmouseover="this.children[1].style.display='block'"
-          onmouseout="this.children[1].style.display='none'">
-          <a href="#" style="text-decoration:none; color:#1e3a8a;">Visa</a>
+        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+          onmouseout="this.querySelector('.dd').style.display='none'">
           <div
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; padding:10px; min-width:230px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px;">
+            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
+            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
+            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+            Visa
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="dd"
+            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
             <a href="business-visa.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Business Visa</a>
-            <a href="investor.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Investor
-              Visa</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Business Visa</a>
+            <a href="investor.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Investor Visa</a>
             <a href="employment.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Employment Visa</a>
-            <a href="family.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Family
-              Visa</a>
-            <a href="tourist.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Tourist
-              Visa</a>
-            <a href="freelance.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Freelance
-              Visa</a>
-            <a href="maid.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Maid Visa</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Employment Visa</a>
+            <a href="family.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Family Visa</a>
+            <a href="tourist.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Tourist Visa</a>
+            <a href="freelance.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Freelance Visa</a>
+            <a href="maid.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Maid Visa</a>
           </div>
         </div>
 
         <!-- Notarization -->
-        <div style="position:relative;" onmouseover="this.children[1].style.display='block'"
-          onmouseout="this.children[1].style.display='none'">
-          <a href="#" style="text-decoration:none; color:#1e3a8a;">Notarization</a>
+        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+          onmouseout="this.querySelector('.dd').style.display='none'">
           <div
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; padding:10px; min-width:230px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:8px;">
-            <a href="poa.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Power of
-              Attorney</a>
-            <a href="moa.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">MOA &
-              Amendments</a>
-            <a href="mou.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">MOU</a>
-            <a href="noc.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">NOC</a>
-            <a href="legal.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Legal
-              Notices</a>
-            <a href="wills.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Wills &
-              Agreements</a>
+            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
+            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
+            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+            Notarization
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="dd"
+            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
+            <a href="poa.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Power of Attorney</a>
+            <a href="moa.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOA &amp; Amendments</a>
+            <a href="mou.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOU</a>
+            <a href="noc.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">NOC</a>
+            <a href="legal.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Notices</a>
+            <a href="wills.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Wills &amp; Agreements</a>
             <a href="undertaking.html"
-              style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Undertaking Letters</a>
-            <a href="affidavit.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Sworn
-              Affidavits</a>
-            <a href="court.html" style="display:block; padding:6px; text-decoration:none; color:#1e3a8a;">Court
-              Memorandum</a>
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Undertaking Letters</a>
+            <a href="affidavit.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Affidavits</a>
+            <a href="court.html"
+              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
+              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
+              onmouseout="this.style.background='transparent'; this.style.color='#444';">Court Memorandum</a>
           </div>
         </div>
 
@@ -182,8 +321,8 @@
                   <p style="color:#c5d9f5; font-size:13px; margin:0 0 14px 0; line-height:1.5;">We're here to help you
                     make the most of your experience.</p>
                   <p style="color:#a0c0f0; font-size:11px; font-weight:600; letter-spacing:0.05em; margin:0 0 2px 0;">
-                    TOLL-FREE</p>
-                  <p style="color:#ffffff; font-size:24px; font-weight:700; margin:0;">800 9673</p>
+                    MAIL US</p>
+                  <p style="color:#ffffff; font-size:15px; font-weight:300; margin:0;">gcc.masterpiece@gmail.com</p>
                 </div>
 
                 <div style="flex:1; min-width:0;">
@@ -191,10 +330,7 @@
 
                   <select id="wa-number-select"
                     style="width:100%; padding:7px 15px; border-radius:6px; border:none; font-size:13px; color:#1e3a8a; font-weight:500; background:#ffffff; appearance:auto; box-sizing:border-box; margin-bottom:8px;">
-                    <option value="97156681396">UAE +971 56 681 396</option>
-                    <option value="97156681397">UAE +971 56 681 397</option>
-                    <option value="97156681398">UAE +971 56 681 398</option>
-                    <option value="97156681399">UAE +971 56 681 399</option>
+                    <option value="97156681396">UAE +971 58 995 8440</option>
                   </select>
 
                   <a id="wa-link"
@@ -209,9 +345,9 @@
           </div>
         </div>
 
-        <a href="#"
-          style="padding:10px 24px; background:#096825; color:white; border-radius:50px; text-decoration:none; font-weight:600;">Track
-          it all!</a>
+        <a href="#find-us"
+          style="padding:10px 24px; background:#096825; color:white; border-radius:50px; text-decoration:none; font-weight:600;">Find
+          Us</a>
 
       </div>
 
@@ -255,7 +391,7 @@
         <p style="font-size:1.35rem; margin-bottom:2.5rem; opacity:0.95;">
           Learn more about us
         </p>
-        <a href="#"
+        <a href="#translation-services"
           style="display:inline-block; padding:16px 36px; background:#096825; color:#ffffff; font-weight:600; border-radius:50px; text-decoration:none; font-size:1.15rem; box-shadow:0 8px 20px rgba(0,0,0,0.2);">
           Discover Masterpiece
         </a>
@@ -394,7 +530,7 @@
   </div>
 
   <!-- ====================== TRANSLATION SERVICES ====================== -->
-  <div
+  <div id="translation-services"
     style="position: relative; height: 100vh; background-image: url('/assets/translation\ img.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div style="position: absolute; inset: 0; background: rgba(30, 58, 138, 0.78); z-index: 1;"></div>
 
@@ -505,25 +641,25 @@
 
         <!-- Stat 1 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">100+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">100+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">language pairs</div>
         </div>
 
         <!-- Stat 2 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">30+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">30+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">in-house translators</div>
         </div>
 
         <!-- Stat 3 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">500000+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">500000+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">words translated</div>
         </div>
 
         <!-- Stat 4 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">10000+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">10000+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">projects completed</div>
         </div>
 
@@ -656,25 +792,25 @@
 
         <!-- Stat 1 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">100+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">100+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Countries</div>
         </div>
 
         <!-- Stat 2 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">1000+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">1000+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Happy clients</div>
         </div>
 
         <!-- Stat 3 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">1000+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">1000+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Project completed</div>
         </div>
 
         <!-- Stat 4 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">2000+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">2000+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">projects answered</div>
         </div>
 
@@ -759,25 +895,25 @@
 
         <!-- Stat 1 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">200+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">200+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Loyal partners</div>
         </div>
 
         <!-- Stat 2 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">300+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">300+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Project on target</div>
         </div>
 
         <!-- Stat 3 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">400+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">400+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Queries answered</div>
         </div>
 
         <!-- Stat 4 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">500+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">500+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Happy clients</div>
         </div>
 
@@ -872,25 +1008,25 @@
 
         <!-- Stat 1 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">50+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">50+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Countries</div>
         </div>
 
         <!-- Stat 2 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">100+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">100+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Loyal Partners</div>
         </div>
 
         <!-- Stat 3 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">400+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">400+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Queries on target</div>
         </div>
 
         <!-- Stat 4 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">500+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">500+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">projects recieved</div>
         </div>
 
@@ -999,25 +1135,25 @@
 
         <!-- Stat 1 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">200+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">200+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Loyal partners</div>
         </div>
 
         <!-- Stat 2 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">300+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">300+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Projects on target</div>
         </div>
 
         <!-- Stat 3 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">400+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">400+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Queries answered</div>
         </div>
 
         <!-- Stat 4 -->
         <div style="flex: 1; min-width: 170px;">
-          <div style="font-size: 2.9rem; font-weight: 700; color: #1e3a8a; line-height: 1;">500+</div>
+          <div style="font-size: 2.9rem; font-weight: 700; color: #136d22; line-height: 1;">500+</div>
           <div style="margin-top: 6px; font-size: 1.02rem; color: #475569; font-weight: 500;">Happy clients</div>
         </div>
 
@@ -1228,7 +1364,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <div style="background:#f8fafc;padding:80px 0;font-family:'Poppins',sans-serif;">
+  <div id="find-us" style="background:#f8fafc;padding:80px 0;font-family:'Poppins',sans-serif;">
     <div style="max-width:1200px;margin:auto;padding:0 30px;">
 
 
@@ -1448,17 +1584,13 @@
           <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px;">Contact Us</h4>
           <div style="font-size: 1.02rem; line-height: 2;">
             <div style="margin-bottom: 16px;">
-              <strong style="color: #cbd5e1;">Toll Free:</strong><br>
-              <span style="color: #60a5fa;">800 9673</span>
-            </div>
-            <div style="margin-bottom: 16px;">
               <strong style="color: #cbd5e1;">Mobile:</strong><br>
-              <span style="color: #60a5fa;">+971 56 681 3996</span>
+              <span style="color: #60a5fa;">+971 58 995 8440</span>
             </div>
             <div>
               <strong style="color: #cbd5e1;">Email:</strong><br>
-              <a href="mailto:info@masterpiece.ae"
-                style="color: #60a5fa; text-decoration: none;">info@masterpiece.ae</a>
+              <a href="mailto:gcc.masterpiece@gmail.com"
+                style="color: #60a5fa; text-decoration: none;">gcc.masterpiece@gmail.com</a>
             </div>
           </div>
         </div>
