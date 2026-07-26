@@ -1,633 +1,1357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Masterpiece Translation Services | Certified translation & localization</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Masterpiece Notarization Services | Power of Attorney, MOA, Wills & Legal Documents</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ── RESET / BASE ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Source Sans 3', sans-serif;
+            background: #f4f6f9;
+            color: #1f2937;
+        }
+
+        /* ── HEADER ── */
+        .site-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.85rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .logo-link img {
+            height: 30px;
+            display: block;
+        }
+
+        /* Desktop nav */
+        .main-nav {
+            display: flex;
+            gap: 0;
+            font-weight: 500;
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0 0.5rem;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 14px 14px;
+            font-size: 14px;
+            color: #111;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color .2s, border-color .2s;
+        }
+        .nav-label:hover {
+            color: #1e3a8a;
+            border-bottom-color: #1e3a8a;
+        }
+        .nav-label svg {
+            flex-shrink: 0;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            padding: 6px;
+            min-width: 320px;
+            z-index: 300;
+            grid-template-columns: 1fr 1fr;
+        }
+        .nav-item:hover .dropdown {
+            display: grid;
+        }
+        .dropdown-single {
+            grid-template-columns: 1fr;
+            min-width: 220px;
+        }
+        .dd-link {
+            display: block;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #444;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background .15s, color .15s;
+        }
+        .dd-link:hover {
+            background: #f1f5ff;
+            color: #1e3a8a;
+        }
+
+        /* Header buttons */
+        .header-btns {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .btn-support {
+            padding: 9px 20px;
+            border: 2px solid #096825;
+            color: #096825;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        .btn-findus {
+            padding: 10px 20px;
+            background: #096825;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        /* Support popup */
+        #support-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        #support-popup {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            padding-top: 12px;
+            width: 420px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 400;
+            box-sizing: border-box;
+        }
+        #support-popup .popup-inner {
+            background: #1e4fa0;
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+        }
+        #support-popup .popup-arrow {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #1e4fa0;
+        }
+        .popup-inner-flex {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .popup-left {
+            flex: 1;
+        }
+        .popup-right {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+            z-index: 500;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1e3a8a;
+            border-radius: 2px;
+            transition: transform .3s, opacity .3s;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile nav drawer */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 190;
+            overflow-y: auto;
+        }
+        .mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 190;
+        }
+        .mobile-nav-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 88vw);
+            height: 100%;
+            background: #fff;
+            z-index: 191;
+            overflow-y: auto;
+            padding: 72px 0 32px;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+        }
+        .mobile-nav.open {
+            display: block;
+        }
+
+        .mob-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #096825;
+            letter-spacing: .08em;
+            padding: 16px 20px 6px;
+            text-transform: uppercase;
+        }
+        .mob-link {
+            display: block;
+            padding: 11px 20px;
+            font-size: 14px;
+            color: #1f2937;
+            text-decoration: none;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .mob-link:hover {
+            background: #f1f5ff;
+            color: #1e3a8a;
+        }
+        .mob-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e3a8a;
+            background: #f8faff;
+            border-top: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        .mob-section-header svg {
+            transition: transform .3s;
+        }
+        .mob-section-header.expanded svg {
+            transform: rotate(180deg);
+        }
+        .mob-sub-links {
+            display: none;
+        }
+        .mob-sub-links.open {
+            display: block;
+        }
+
+        /* ── HERO ── */
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            min-height: 340px;
+            background-image: url('/assets/notarization img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30, 58, 138, 0.78);
+            z-index: 1;
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .hero-left {
+            max-width: 620px;
+            color: white;
+        }
+        .hero-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e0ecff, #f8fafc);
+            border-radius: 18px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-icon i {
+            font-size: 35px;
+            color: #096825;
+        }
+        .hero-left h2 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+        .hero-left p {
+            font-size: 1.18rem;
+            line-height: 1.75;
+            margin-bottom: 40px;
+        }
+        .hero-readmore {
+            display: inline-block;
+            padding: 16px 36px;
+            border: 2px solid #0b7a2d;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero-right {
+            max-width: 720px;
+            width: 100%;
+            color: white;
+            font-size: 1.05rem;
+        }
+        .hero-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px 32px;
+        }
+        .hero-link {
+            color: white;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .hero-link:hover {
+            transform: translateX(4px);
+            color: #ccc;
+        }
+
+        /* ── MAIN LAYOUT ── */
+        .main-layout {
+            max-width: 1400px;
+            margin: 48px auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 260px;
+        }
+        .service-title-head {
+            font-family: 'Merriweather', serif;
+            color: #1e3a8a;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            border-left: 5px solid #096825;
+            padding-left: 20px;
+        }
+        .service-content-area {
+            background: #fff;
+            border-radius: 28px;
+            padding: 32px 36px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eef2f8;
+        }
+        .sidebar {
+            width: 300px;
+            flex-shrink: 0;
+        }
+        .sidebar-box {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 24px;
+        }
+        .sidebar-box-header {
+            background: #096825;
+            padding: 16px 20px;
+            color: #fff;
+            font-weight: 700;
+        }
+        #services-sidebar-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar-service-item {
+            padding: 14px 18px;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 1px solid #edf2f7;
+            border-left: 4px solid transparent;
+            background: #fff;
+            color: #1f2937;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-email-box {
+            background: linear-gradient(105deg, #096825, #466d57);
+            border-radius: 10px;
+            padding: 22px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 80px 0 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+        .footer-logo img {
+            height: 2.2rem;
+            width: auto;
+            display: block;
+        }
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e293b;
+            border-radius: 50%;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1.02rem;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-bottom-links a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        /* ══════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════ */
+        @media (max-width: 1100px) {
+            .main-nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .header-inner {
+                padding: 0.75rem 1.25rem;
+            }
+            .hero-inner {
+                padding: 0 24px;
+                gap: 24px;
+            }
+            .hero-left h2 {
+                font-size: 2.4rem;
+            }
+            .hero-right {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .footer-grid>div:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0.75rem 1rem;
+            }
+            .btn-findus {
+                display: none;
+            }
+            .btn-support {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+            .hero-section {
+                height: auto;
+                min-height: 0;
+                background-attachment: scroll;
+                padding: 48px 0;
+            }
+            .hero-inner {
+                padding: 0 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-left {
+                max-width: 100%;
+            }
+            .hero-left h2 {
+                font-size: 1.8rem;
+                margin-bottom: 16px;
+            }
+            .hero-left p {
+                font-size: 1rem;
+                margin-bottom: 28px;
+            }
+            .hero-icon {
+                width: 54px;
+                height: 54px;
+                margin-bottom: 20px;
+            }
+            .hero-icon i {
+                font-size: 26px;
+            }
+            .hero-readmore {
+                padding: 12px 28px;
+                font-size: 14px;
+            }
+            .main-layout {
+                margin: 28px auto;
+                padding: 0 16px;
+                gap: 24px;
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            .service-title-head {
+                font-size: 22px;
+            }
+            .service-content-area {
+                padding: 22px 20px;
+                border-radius: 16px;
+            }
+            #support-popup {
+                width: 300px;
+                left: auto;
+                right: -10px;
+                transform: translateX(0) translateY(8px);
+            }
+            #support-popup.active {
+                transform: translateX(0) translateY(0);
+            }
+            .popup-inner-flex {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .footer-inner {
+                padding: 0 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .site-footer {
+                padding: 48px 0 24px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-left h2 {
+                font-size: 1.5rem;
+            }
+            .hero-left p {
+                font-size: 0.95rem;
+            }
+            .service-title-head {
+                font-size: 18px;
+                padding-left: 14px;
+            }
+            .service-content-area {
+                padding: 18px 14px;
+            }
+            .sidebar-email-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
-<body style="margin:0; padding:0; font-family:'Source Sans 3', sans-serif; background:#f4f6f9; color:#1f2937;">
 
-<!-- Header -->
-  <header style="background:white; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;">
-    <div
-      style="max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between;">
+<body>
 
-      <!-- Logo -->
-      <a href="home.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-        <img src="/assets/logo.PNG" alt="MASTERPIECE" style="height:30px;">
-      </a>
+    <!-- ── HEADER ── -->
+    <header class="site-header">
+        <div class="header-inner">
 
-      <!-- Navigation Links -->
-      <!-- Navigation Links with Dropdown -->
-      <div
-        style="display:flex; gap:0; font-weight:500; background:#fff; border-bottom:1px solid #e5e7eb; padding:0 1.5rem;">
+            <!-- Logo -->
+            <a href="home.html" class="logo-link">
+                <img src="/assets/logo.PNG" alt="MASTERPIECE" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav">
+
+                <!-- Translation -->
+                <div class="nav-item">
+                    <a href="translation.html" class="nav-label">
+                        Translation
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </a>
+                    <div class="dropdown">
+                        <a href="translation.html?service=legal-translation" class="dd-link">Legal Translation</a>
+                        <a href="translation.html?service=interpretation" class="dd-link">Interpretation</a>
+                        <a href="translation.html?service=technical" class="dd-link">Technical Translation</a>
+                        <a href="translation.html?service=medical" class="dd-link">Medical Translation</a>
+                        <a href="translation.html?service=financial" class="dd-link">Financial Translation</a>
+                        <a href="translation.html?service=software" class="dd-link">Software Localization</a>
+                        <a href="translation.html?service=scientific" class="dd-link">Scientific Translation</a>
+                        <a href="translation.html?service=sworn" class="dd-link">Sworn Translation</a>
+                        <a href="translation.html?service=certified" class="dd-link">Certified Translation</a>
+                        <a href="translation.html?service=website-localization" class="dd-link">Website Localisation</a>
+                        <a href="translation.html?service=poa-translation" class="dd-link">POA Translation</a>
+                    </div>
+                </div>
+
+                <!-- Attestation -->
+                <div class="nav-item">
+                    <a href="attestation.html" class="nav-label">
+                        Attestation
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </a>
+                    <div class="dropdown">
+                        <a href="attestation.html?service=educational-certificates" class="dd-link">Educational Certificates</a>
+                        <a href="attestation.html?service=marriage-certificate" class="dd-link">Marriage Certificate</a>
+                        <a href="attestation.html?service=birth-certificate" class="dd-link">Birth Certificate</a>
+                        <a href="attestation.html?service=medical-certificates" class="dd-link">Medical Certificates</a>
+                        <a href="attestation.html?service=degree-certificate" class="dd-link">Degree Certificate</a>
+                        <a href="attestation.html?service=diploma-certificates" class="dd-link">Diploma Certificates</a>
+                        <a href="attestation.html?service=death-certificate" class="dd-link">Death Certificate</a>
+                        <a href="attestation.html?service=uk-certificate" class="dd-link">UK Certificate</a>
+                        <a href="attestation.html?service=usa-certificate" class="dd-link">USA Certificate</a>
+                        <a href="attestation.html?service=indian-certificate" class="dd-link">Indian Certificate</a>
+                        <a href="attestation.html?service=mofa-attestation" class="dd-link">MOFA Attestation</a>
+                        <a href="attestation.html?service=pakistan-attestation" class="dd-link">Pakistan Attestation</a>
+                        <a href="attestation.html?service=philippines-attestation" class="dd-link">Philippines Attestation</a>
+                    </div>
+                </div>
+
+                <!-- Business Setup -->
+                <div class="nav-item">
+                    <a href="business.html" class="nav-label">
+                        Business Setup
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </a>
+                    <div class="dropdown dropdown-single">
+                        <a href="business.html?service=freezone" class="dd-link">Free Zone Business</a>
+                        <a href="business.html?service=mainland" class="dd-link">Mainland Business</a>
+                        <a href="business.html?service=offshore" class="dd-link">Offshore Business</a>
+                        <a href="business.html?service=trademark" class="dd-link">Trademark Registration</a>
+                        <a href="business.html?service=bank-account" class="dd-link">Company Bank Account</a>
+                    </div>
+                </div>
+
+                <!-- Visa -->
+                <div class="nav-item">
+                    <a href="visa.html" class="nav-label">
+                        Visa
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </a>
+                    <div class="dropdown dropdown-single">
+                        <a href="visa.html?service=business-visa" class="dd-link">Business Visa</a>
+                        <a href="visa.html?service=investor-visa" class="dd-link">Investor Visa</a>
+                        <a href="visa.html?service=employment-visa" class="dd-link">Employment Visa</a>
+                        <a href="visa.html?service=family-visa" class="dd-link">Family Visa</a>
+                        <a href="visa.html?service=tourist-visa" class="dd-link">Tourist Visa</a>
+                        <a href="visa.html?service=freelance-visa" class="dd-link">Freelance Visa</a>
+                        <a href="visa.html?service=maid-visa" class="dd-link">Maid Visa</a>
+                    </div>
+                </div>
+
+                <!-- Notarization (active) -->
+                <div class="nav-item">
+                    <a href="notarization.html" class="nav-label" style="color:#1e3a8a; border-bottom-color:#1e3a8a;">
+                        Notarization
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </a>
+                    <div class="dropdown dropdown-single">
+                        <a href="notarization.html?service=poa" class="dd-link">Power of Attorney</a>
+                        <a href="notarization.html?service=moa" class="dd-link">MOA &amp; Amendments</a>
+                        <a href="notarization.html?service=mou" class="dd-link">MOU</a>
+                        <a href="notarization.html?service=noc" class="dd-link">NOC</a>
+                        <a href="notarization.html?service=legal" class="dd-link">Legal Notices</a>
+                        <a href="notarization.html?service=wills" class="dd-link">Wills &amp; Agreements</a>
+                        <a href="notarization.html?service=undertaking" class="dd-link">Undertaking Letters</a>
+                        <a href="notarization.html?service=affidavit" class="dd-link">Sworn Affidavits</a>
+                        <a href="notarization.html?service=court" class="dd-link">Court Memorandum</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header Buttons -->
+            <div class="header-btns">
+                <div id="support-wrapper">
+                    <a href="#" class="btn-support">Get Support</a>
+                    <div id="support-popup">
+                        <div class="popup-inner">
+                            <div class="popup-arrow"></div>
+                            <div class="popup-inner-flex">
+                                <div class="popup-left">
+                                    <p style="color:#ffffff; font-weight:700; font-size:15px; margin:0 0 4px 0;">Talk to an expert</p>
+                                    <p style="color:#c5d9f5; font-size:13px; margin:0 0 14px 0; line-height:1.5;">We're here to help you make the most of your experience.</p>
+                                    <p style="color:#a0c0f0; font-size:11px; font-weight:600; letter-spacing:0.05em; margin:0 0 2px 0;">MAIL US</p>
+                                    <p style="color:#ffffff; font-size:15px; font-weight:300; margin:0;">gcc.masterpiece@gmail.com</p>
+                                </div>
+                                <div class="popup-right">
+                                    <p style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0;">Request a call back</p>
+                                    <select id="wa-number-select" style="width:100%; padding:7px 15px; border-radius:6px; border:none; font-size:13px; color:#1e3a8a; font-weight:500; background:#ffffff; appearance:auto; box-sizing:border-box; margin-bottom:8px;">
+                                        <option value="97156681396">UAE +971 58 995 8440</option>
+                                    </select>
+                                    <a id="wa-link" href="https://wa.me/97156681396?text=I%20have%20gone%20through%20your%20website%2C%20please%20call%20back" target="_blank"
+                                    style="display:block; width:100%; padding:8px 0; background:#000000; color:#ffffff; border-radius:6px; font-weight:600; font-size:13px; text-align:center; text-decoration:none; box-sizing:border-box;">
+                                    Call me back!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="home.html#find-us" class="btn-findus">Find Us</a>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav-panel">
 
         <!-- Translation -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
-          onmouseout="this.querySelector('.dd').style.display='none'">
-          <a href="translation.html" style="text-decoration:none;">
-            <div
-            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
-            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
-            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+        <div class="mob-section-header" onclick="toggleMobSection(this)">
             Translation
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          </a>
-          <div class="dd"
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:320px; z-index:100; display:none; grid-template-columns:1fr 1fr;">
-            <a href="translation.html?service=legal-translation"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Translation</a>
-            <a href="translation.html?service=interpretation"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Interpretation</a>
-            <a href="translation.html?service=technical"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Technical Translation</a>
-            <a href="translation.html?service=medical"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Translation</a>
-            <a href="translation.html?service=financial"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Financial Translation</a>
-            <a href="translation.html?service=software"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Software Localization</a>
-            <a href="translation.html?service=scientific"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Scientific Translation</a>
-            <a href="translation.html?service=sworn"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Translation</a>
-            <a href="translation.html?service=certified"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Certified Translation</a>
-            <a href="translation.html?service=website-localization"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Website Localisation</a>
-            <a href="translation.html?service=poa-translation"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">POA Translation</a>
-          </div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div class="mob-sub-links">
+            <a href="translation.html?service=legal-translation" class="mob-link">Legal Translation</a>
+            <a href="translation.html?service=interpretation" class="mob-link">Interpretation</a>
+            <a href="translation.html?service=technical" class="mob-link">Technical Translation</a>
+            <a href="translation.html?service=medical" class="mob-link">Medical Translation</a>
+            <a href="translation.html?service=financial" class="mob-link">Financial Translation</a>
+            <a href="translation.html?service=software" class="mob-link">Software Localization</a>
+            <a href="translation.html?service=scientific" class="mob-link">Scientific Translation</a>
+            <a href="translation.html?service=sworn" class="mob-link">Sworn Translation</a>
+            <a href="translation.html?service=certified" class="mob-link">Certified Translation</a>
+            <a href="translation.html?service=website-localization" class="mob-link">Website Localisation</a>
+            <a href="translation.html?service=poa-translation" class="mob-link">POA Translation</a>
         </div>
 
         <!-- Attestation -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='grid'"
-          onmouseout="this.querySelector('.dd').style.display='none'">
-          <a href="attestation.html" style="text-decoration:none;">
-            <div
-            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
-            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
-            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+        <div class="mob-section-header" onclick="toggleMobSection(this)">
             Attestation
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          </a>
-          <div class="dd"
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:320px; z-index:100; grid-template-columns:1fr 1fr;">
-            <a href="educational.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Educational Certificates</a>
-            <a href="marriage.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Marriage Certificate</a>
-            <a href="birth.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Birth Certificate</a>
-            <a href="medical.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Certificates</a>
-            <a href="degree.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Degree Certificate</a>
-            <a href="diploma.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Diploma Certificates</a>
-            <a href="death.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Death Certificate</a>
-            <a href="uk.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">UK Certificate</a>
-            <a href="usa.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">USA Certificate</a>
-            <a href="indian.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Indian Certificate</a>
-            <a href="mofa.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOFA Attestation</a>
-            <a href="pakistan.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Pakistan Attestation</a>
-            <a href="philippines.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Philippines Attestation</a>
-          </div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div class="mob-sub-links">
+            <a href="attestation.html?service=educational-certificates" class="mob-link">Educational Certificates</a>
+            <a href="attestation.html?service=marriage-certificate" class="mob-link">Marriage Certificate</a>
+            <a href="attestation.html?service=birth-certificate" class="mob-link">Birth Certificate</a>
+            <a href="attestation.html?service=medical-certificates" class="mob-link">Medical Certificates</a>
+            <a href="attestation.html?service=degree-certificate" class="mob-link">Degree Certificate</a>
+            <a href="attestation.html?service=diploma-certificates" class="mob-link">Diploma Certificates</a>
+            <a href="attestation.html?service=death-certificate" class="mob-link">Death Certificate</a>
+            <a href="attestation.html?service=uk-certificate" class="mob-link">UK Certificate</a>
+            <a href="attestation.html?service=usa-certificate" class="mob-link">USA Certificate</a>
+            <a href="attestation.html?service=indian-certificate" class="mob-link">Indian Certificate</a>
+            <a href="attestation.html?service=mofa-attestation" class="mob-link">MOFA Attestation</a>
+            <a href="attestation.html?service=pakistan-attestation" class="mob-link">Pakistan Attestation</a>
+            <a href="attestation.html?service=philippines-attestation" class="mob-link">Philippines Attestation</a>
         </div>
 
         <!-- Business Setup -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
-          onmouseout="this.querySelector('.dd').style.display='none'">
-          <a href="business-setup.html" style="text-decoration:none;">
-            <div
-            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
-            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
-            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+        <div class="mob-section-header" onclick="toggleMobSection(this)">
             Business Setup
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          </a>
-          <div class="dd"
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="freezone.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Free Zone Business</a>
-            <a href="mainland.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Mainland Business</a>
-            <a href="offshore.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Offshore Business</a>
-            <a href="trademark.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Trademark Registration</a>
-            <a href="bank.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Company Bank Account</a>
-          </div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div class="mob-sub-links">
+            <a href="business.html?service=freezone" class="mob-link">Free Zone Business</a>
+            <a href="business.html?service=mainland" class="mob-link">Mainland Business</a>
+            <a href="business.html?service=offshore" class="mob-link">Offshore Business</a>
+            <a href="business.html?service=trademark" class="mob-link">Trademark Registration</a>
+            <a href="business.html?service=bank-account" class="mob-link">Company Bank Account</a>
         </div>
 
         <!-- Visa -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
-          onmouseout="this.querySelector('.dd').style.display='none'">
-          <a href="visa.html" style="text-decoration:none;">
-            <div
-            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
-            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
-            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+        <div class="mob-section-header" onclick="toggleMobSection(this)">
             Visa
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          </a>
-          <div class="dd"
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="business-visa.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Business Visa</a>
-            <a href="investor.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Investor Visa</a>
-            <a href="employment.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Employment Visa</a>
-            <a href="family.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Family Visa</a>
-            <a href="tourist.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Tourist Visa</a>
-            <a href="freelance.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Freelance Visa</a>
-            <a href="maid.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Maid Visa</a>
-          </div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div class="mob-sub-links">
+            <a href="visa.html?service=business-visa" class="mob-link">Business Visa</a>
+            <a href="visa.html?service=investor-visa" class="mob-link">Investor Visa</a>
+            <a href="visa.html?service=employment-visa" class="mob-link">Employment Visa</a>
+            <a href="visa.html?service=family-visa" class="mob-link">Family Visa</a>
+            <a href="visa.html?service=tourist-visa" class="mob-link">Tourist Visa</a>
+            <a href="visa.html?service=freelance-visa" class="mob-link">Freelance Visa</a>
+            <a href="visa.html?service=maid-visa" class="mob-link">Maid Visa</a>
         </div>
 
         <!-- Notarization -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
-          onmouseout="this.querySelector('.dd').style.display='none'">
-          <a href="notarization.html" style="text-decoration:none;">
-            <div
-            style="display:flex; align-items:center; gap:5px; padding:14px 16px; font-size:14px; color:#111; cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap;"
-            onmouseover="this.style.color='#1e3a8a'; this.style.borderBottomColor='#1e3a8a';"
-            onmouseout="this.style.color='#111'; this.style.borderBottomColor='transparent';">
+        <div class="mob-section-header expanded" onclick="toggleMobSection(this)">
             Notarization
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-          </a>
-          <div class="dd"
-            style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="poa.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Power of Attorney</a>
-            <a href="moa.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOA &amp; Amendments</a>
-            <a href="mou.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">MOU</a>
-            <a href="noc.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">NOC</a>
-            <a href="legal.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Notices</a>
-            <a href="wills.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Wills &amp; Agreements</a>
-            <a href="undertaking.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Undertaking Letters</a>
-            <a href="affidavit.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Affidavits</a>
-            <a href="court.html"
-              style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;"
-              onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';"
-              onmouseout="this.style.background='transparent'; this.style.color='#444';">Court Memorandum</a>
-          </div>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <div class="mob-sub-links open">
+            <a href="notarization.html?service=poa" class="mob-link">Power of Attorney</a>
+            <a href="notarization.html?service=moa" class="mob-link">MOA &amp; Amendments</a>
+            <a href="notarization.html?service=mou" class="mob-link">MOU</a>
+            <a href="notarization.html?service=noc" class="mob-link">NOC</a>
+            <a href="notarization.html?service=legal" class="mob-link">Legal Notices</a>
+            <a href="notarization.html?service=wills" class="mob-link">Wills &amp; Agreements</a>
+            <a href="notarization.html?service=undertaking" class="mob-link">Undertaking Letters</a>
+            <a href="notarization.html?service=affidavit" class="mob-link">Sworn Affidavits</a>
+            <a href="notarization.html?service=court" class="mob-link">Court Memorandum</a>
         </div>
 
-      </div>
+        <div style="padding: 20px;">
+            <a href="home.html#find-us" style="display:block; text-align:center; padding:12px; background:#096825; color:white; border-radius:50px; font-weight:600; text-decoration:none; margin-bottom:12px;">Find Us</a>
+            <a href="mailto:gcc.masterpiece@gmail.com" style="display:block; text-align:center; padding:12px; border:2px solid #096825; color:#096825; border-radius:50px; font-weight:600; text-decoration:none; font-size:13px;">gcc.masterpiece@gmail.com</a>
+        </div>
+    </div>
+</div>
 
-      <!-- Buttons -->
-      <div style="display:flex; gap:1rem; align-items:flex-start;">
+<!-- ── HERO ── -->
+<div id="notarization-services" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <h2>Notarization Services</h2>
+            <p>Quick and authentic notarization of all legal, commercial, and personal documents by licensed notaries in Dubai and across UAE.</p>
+            <a href="#" class="hero-readmore">Read more</a>
+        </div>
+    </div>
+</div>
 
-        <div id="support-wrapper" style="position:relative; display:inline-block;">
-          <a href="#"
-            style="padding:9px 24px; border:2px solid #096825; color:#096825; border-radius:50px; text-decoration:none; font-weight:600; display:inline-block;">Get
-            Support</a>
+<!-- ── MAIN LAYOUT ── -->
+<div class="main-layout">
+    <div class="main-content">
+        <div id="service-title-head" class="service-title-head"></div>
+        <div id="service-content-area" class="service-content-area">
+            <div id="dynamic-service-body"><p style="color:#6b7280;">Loading notarization services...</p></div>
+        </div>
+    </div>
 
-          <div id="support-popup"
-            style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(8px); padding-top:12px; width:420px; opacity:0; pointer-events:none; transition:opacity 0.25s ease, transform 0.25s ease; z-index:100; box-sizing:border-box;">
-
-            <div style="background:#1e4fa0; border-radius:12px; padding:20px; position:relative;">
-
-              <div
-                style="position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:8px solid #1e4fa0;">
-              </div>
-
-              <div style="display:flex; gap:16px; align-items:flex-start;">
-
-                <div style="flex:1;">
-                  <p style="color:#ffffff; font-weight:700; font-size:15px; margin:0 0 4px 0;">Talk to an expert</p>
-                  <p style="color:#c5d9f5; font-size:13px; margin:0 0 14px 0; line-height:1.5;">We're here to help you
-                    make the most of your experience.</p>
-                  <p style="color:#a0c0f0; font-size:11px; font-weight:600; letter-spacing:0.05em; margin:0 0 2px 0;">
-                    MAIL US</p>
-                  <p style="color:#ffffff; font-size:15px; font-weight:300; margin:0;">gcc.masterpiece@gmail.com</p>
-                </div>
-
-                <div style="flex:1; min-width:0;">
-                  <p style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0;">Request a call back</p>
-
-                  <select id="wa-number-select"
-                    style="width:100%; padding:7px 15px; border-radius:6px; border:none; font-size:13px; color:#1e3a8a; font-weight:500; background:#ffffff; appearance:auto; box-sizing:border-box; margin-bottom:8px;">
-                    <option value="97156681396">UAE +971 58 995 8440</option>
-                  </select>
-
-                  <a id="wa-link"
-                    href="https://wa.me/97156681396?text=I%20have%20gone%20through%20your%20website%2C%20please%20call%20back"
-                    target="_blank"
-                    style="display:block; width:100%; padding:8px 0; background:#000000; color:#ffffff; border-radius:6px; font-weight:600; font-size:13px; text-align:center; text-decoration:none; box-sizing:border-box;">
-                    Call me back!</a>
-                </div>
-
-              </div>
+    <div class="sidebar">
+        <div class="sidebar-box">
+            <div class="sidebar-box-header">📄 Notarization Services</div>
+            <ul id="services-sidebar-list"></ul>
+        </div>
+        <div class="sidebar-email-box">
+            <div><i class="fa-regular fa-envelope" style="font-size:42px; color:rgba(255,255,255,0.9);"></i></div>
+            <div>
+                <div style="color:#ffffff; font-size:11px; font-weight:700;">MAIL-US</div>
+                <div style="color:#000000; font-size:16px; font-weight:100;">gcc.masterpiece@gmail.com</div>
+                <div style="color:#ffffff; font-size:12px;">Get in touch with our experts</div>
             </div>
-          </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+
+            <!-- Logo & About -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="assets/logo2nd.PNG" alt="Masterpiece Logo" />
+                </div>
+                <p style="color:#94a3b8; line-height:1.7; max-width:280px; margin-bottom:24px;">
+                    Your trusted partner for Translation, Attestation, Business Setup, Visa &amp; Notarization services.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <div class="footer-links">
+                    <a href="#">Translation Services</a>
+                    <a href="#">Attestation Services</a>
+                    <a href="#">Business Setup</a>
+                    <a href="#">Visa Services</a>
+                    <a href="#">Notarization Services</a>
+                </div>
+            </div>
+
+            <!-- Translation -->
+            <div class="footer-col">
+                <h4>Translation</h4>
+                <div class="footer-links">
+                    <a href="#">Legal Translation</a>
+                    <a href="#">Medical Translation</a>
+                    <a href="#">Technical Translation</a>
+                    <a href="#">Certified Translation</a>
+                    <a href="#">Website Localization</a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#">Attestation</a>
+                    <a href="#">Business Setup</a>
+                    <a href="#">Visa Services</a>
+                    <a href="#">Notarization</a>
+                    <a href="#">Track Application</a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div style="font-size:1.02rem; line-height:2;">
+                    <div style="margin-bottom:16px;">
+                        <strong style="color:#cbd5e1;">Mobile:</strong><br>
+                        <span style="color:#60a5fa;">+971 58 995 8440</span>
+                    </div>
+                    <div>
+                        <strong style="color:#cbd5e1;">Email:</strong><br>
+                        <a href="mailto:gcc.masterpiece@gmail.com" style="color:#60a5fa; text-decoration:none;">gcc.masterpiece@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <a href="home.html#find-us"
-          style="padding:10px 24px; background:#096825; color:white; border-radius:50px; text-decoration:none; font-weight:600;">Find
-          Us</a>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Masterpiece. All Rights Reserved.</div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div>Delivering trusted services worldwide.</div>
+        </div>
+    </div>
+</footer>
 
-      </div>
+<script>
+    /* ── NOTARIZATION SERVICES DATA ── */
+    const SERVICES_DB = {
+        "poa": {
+            name: "Power of Attorney",
+            heading: "Power of Attorney Notarization",
+            intro: "Masterpiece provides expert notarization of Power of Attorney documents for legal, property, and business transactions.",
+            body: `<p>Power of Attorney notarization is essential for authorizing someone to act on your behalf in legal, financial, or property matters. Masterpiece ensures your POA is properly notarized and legally binding.</p>
+                   <h3> Types of Power of Attorney</h3>
+                   <ul>
+                       <li><strong>General POA:</strong> Broad authority to act on your behalf</li>
+                       <li><strong>Special POA:</strong> Limited to specific transactions</li>
+                       <li><strong>Medical POA:</strong> Healthcare decisions on your behalf</li>
+                       <li><strong>Property POA:</strong> Real estate transactions</li>
+                       <li><strong>Financial POA:</strong> Banking and investment decisions</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Original POA document, valid ID/passport, and witnesses (if required).</p>`
+        },
+        "moa": {
+            name: "MOA & Amendments",
+            heading: "MOA & Amendments Notarization",
+            intro: "Masterpiece provides notarization services for Memorandum of Association (MOA) and company amendments.",
+            body: `<p>Notarization of Memorandum of Association and amendments is a legal requirement for company registration and changes. Masterpiece ensures your documents are properly notarized and compliant.</p>
+                   <h3> Services Covered</h3>
+                   <ul>
+                       <li>MOA notarization for new companies</li>
+                       <li>Amendment notarization for changes</li>
+                       <li>Share transfer agreements</li>
+                       <li>Board resolutions and minutes</li>
+                       <li>Partnership agreements</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Original MOA, amendment documents, company trade license, and shareholder IDs.</p>`
+        },
+        "mou": {
+            name: "MOU",
+            heading: "MOU Notarization Services",
+            intro: "Masterpiece offers professional notarization of Memorandums of Understanding for business partnerships and collaborations.",
+            body: `<p>An MOU is a critical document for establishing business relationships. Masterpiece provides proper notarization to ensure your MOU is legally recognized and enforceable.</p>
+                   <h3> Why Notarize Your MOU?</h3>
+                   <ul>
+                       <li>Legal recognition of intentions</li>
+                       <li>Binding commitment between parties</li>
+                       <li>Prevents disputes and misunderstandings</li>
+                       <li>Required for government and legal proceedings</li>
+                       <li>Adds credibility to business relationships</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Draft MOU, valid IDs of all parties, and company documents (if applicable).</p>`
+        },
+        "noc": {
+            name: "NOC",
+            heading: "NOC Notarization Services",
+            intro: "Masterpiece provides notarization of No Objection Certificates for employment, travel, and legal purposes.",
+            body: `<p>NOC notarization is essential for various purposes including employment changes, travel permissions, and legal proceedings. Masterpiece ensures your NOC is properly notarized and accepted by authorities.</p>
+                   <h3> Common NOC Types</h3>
+                   <ul>
+                       <li>Employment NOC for job changes</li>
+                       <li>Travel NOC for minors</li>
+                       <li>Property NOC for transactions</li>
+                       <li>Medical NOC for treatment</li>
+                       <li>Financial NOC for banking</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Original NOC, valid ID/passport, and supporting documents (if applicable).</p>`
+        },
+        "legal": {
+            name: "Legal Notices",
+            heading: "Legal Notices Notarization",
+            intro: "Masterpiece offers professional notarization of legal notices for property, commercial, and personal matters.",
+            body: `<p>Legal notice notarization is crucial for establishing legal intent and initiating proceedings. Masterpiece ensures your legal notices are properly notarized and legally recognized.</p>
+                   <h3> Types of Legal Notices</h3>
+                   <ul>
+                       <li>Property dispute notices</li>
+                       <li>Commercial and contract disputes</li>
+                       <li>Tenancy and rental notices</li>
+                       <li>Debt recovery notices</li>
+                       <li>Employment termination notices</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Draft legal notice, valid ID, and supporting evidence (contracts, agreements, etc.).</p>`
+        },
+        "wills": {
+            name: "Wills & Agreements",
+            heading: "Wills & Agreements Notarization",
+            intro: "Masterpiece provides notarization services for wills and legal agreements, ensuring your wishes are legally documented and protected.",
+            body: `<p>Notarization of wills and agreements is essential for legal validity and enforceability. Masterpiece ensures your documents are properly notarized and compliant with UAE law.</p>
+                   <h3> Services Covered</h3>
+                   <ul>
+                       <li>Last will and testament notarization</li>
+                       <li>Property agreements and contracts</li>
+                       <li>Business partnership agreements</li>
+                       <li>Marriage and prenuptial agreements</li>
+                       <li>Loan and credit agreements</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Original will/agreement, valid IDs of all parties, and witnesses (if required).</p>`
+        },
+        "undertaking": {
+            name: "Undertaking Letters",
+            heading: "Undertaking Letters Notarization",
+            intro: "Masterpiece provides notarization of undertaking letters for employment, education, and legal commitments.",
+            body: `<p>Undertaking letters notarization is required for various purposes including employment, education, and legal commitments. Masterpiece ensures your undertaking letters are properly notarized and accepted.</p>
+                   <h3> Types of Undertaking Letters</h3>
+                   <ul>
+                       <li>Employment undertaking letters</li>
+                       <li>Educational undertaking letters</li>
+                       <li>Financial undertaking letters</li>
+                       <li>Property undertaking letters</li>
+                       <li>Legal undertaking letters</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Draft undertaking letter, valid ID/passport, and supporting documents (if applicable).</p>`
+        },
+        "affidavit": {
+            name: "Sworn Affidavits",
+            heading: "Sworn Affidavits Notarization",
+            intro: "Masterpiece provides professional notarization of sworn affidavits for legal, immigration, and personal matters.",
+            body: `<p>Sworn affidavits are legally binding statements that require proper notarization. Masterpiece ensures your affidavit is properly witnessed and notarized for acceptance by courts and authorities.</p>
+                   <h3> Common Affidavit Types</h3>
+                   <ul>
+                       <li>Identity and personal status affidavits</li>
+                       <li>Property and financial affidavits</li>
+                       <li>Employment and income affidavits</li>
+                       <li>Immigration and visa affidavits</li>
+                       <li>Family and relationship affidavits</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Draft affidavit, valid ID/passport, and supporting evidence (if applicable).</p>`
+        },
+        "court": {
+            name: "Court Memorandum",
+            heading: "Court Memorandum Notarization",
+            intro: "Masterpiece provides notarization of court memorandums for legal proceedings, ensuring compliance with court requirements.",
+            body: `<p>Court memorandum notarization is essential for legal proceedings. Masterpiece ensures your court documents are properly notarized and accepted by courts and judicial authorities.</p>
+                   <h3> Services Covered</h3>
+                   <ul>
+                       <li>Memorandum of appearance</li>
+                       <li>Memorandum of defense</li>
+                       <li>Memorandum of evidence</li>
+                       <li>Memorandum of settlement</li>
+                       <li>Memorandum of appeal</li>
+                   </ul>
+                   <p><strong>Documents Required:</strong> Draft memorandum, valid ID, and supporting legal documents.</p>`
+        }
+    };
 
-      <script>
+    const serviceSlugsOrder = [
+        "poa",
+        "moa",
+        "mou",
+        "noc",
+        "legal",
+        "wills",
+        "undertaking",
+        "affidavit",
+        "court"
+    ];
+
+    function renderServiceBySlug(slug) {
+        const s = SERVICES_DB[slug] || SERVICES_DB["poa"];
+        document.getElementById("service-title-head").innerText = s.heading;
+        document.getElementById("dynamic-service-body").innerHTML =
+            `<p style="font-size:1rem; line-height:1.7; margin-bottom:20px;">${s.intro}</p>
+               <div style="font-size:1rem; line-height:1.7;">${s.body}</div>
+               <div style="margin-top:32px; border-top:1px solid #eef2f8; padding-top:24px;">
+                 <p style="font-size:14px; color:#096825;"><i class="fa-regular fa-clock"></i> Fast & reliable notarization — contact us for immediate service.</p>
+               </div>`;
+
+        document.querySelectorAll('.sidebar-service-item').forEach(el => {
+            const itemSlug = el.getAttribute('data-slug');
+            if (itemSlug === slug) {
+                el.style.background = "#1e3a8a";
+                el.style.color = "white";
+                el.style.borderLeft = "4px solid #f59e0b";
+                el.style.fontWeight = "600";
+            } else {
+                el.style.background = "#fff";
+                el.style.color = "#1f2937";
+                el.style.borderLeft = "4px solid transparent";
+                el.style.fontWeight = "400";
+            }
+        });
+
+        const newUrl = window.location.pathname + "?service=" + slug;
+        window.history.pushState({ slug }, "", newUrl);
+    }
+
+    function buildSidebar() {
+        const container = document.getElementById("services-sidebar-list");
+        if (!container) return;
+        container.innerHTML = "";
+        serviceSlugsOrder.forEach(slug => {
+            const s = SERVICES_DB[slug];
+            const li = document.createElement("li");
+            li.className = "sidebar-service-item";
+            li.setAttribute("data-slug", slug);
+            li.innerHTML = `<span>📄</span> ${s.name}`;
+            li.addEventListener("click", () => renderServiceBySlug(slug));
+            container.appendChild(li);
+        });
+    }
+
+    function initializeFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        let service = params.get("service");
+        if (!service || !SERVICES_DB[service]) service = "poa";
+        renderServiceBySlug(service);
+    }
+
+    function bindHeroLinks() {
+        document.querySelectorAll(".hero-link").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const href = link.getAttribute("href");
+                if (href && href.includes("service=")) {
+                    const slug = href.split("service=")[1];
+                    if (SERVICES_DB[slug]) {
+                        renderServiceBySlug(slug);
+                        document.getElementById("service-content-area")?.scrollIntoView({ behavior: "smooth" });
+                    }
+                }
+            });
+        });
+    }
+
+    /* ── Support popup ── */
+    function initSupportPopup() {
         const wrapper = document.getElementById('support-wrapper');
         const popup = document.getElementById('support-popup');
         const select = document.getElementById('wa-number-select');
         const waLink = document.getElementById('wa-link');
 
-        wrapper.addEventListener('mouseenter', () => {
-          popup.style.opacity = '1';
-          popup.style.pointerEvents = 'auto';
-          popup.style.transform = 'translateX(-50%) translateY(0)';
-        });
-
-        wrapper.addEventListener('mouseleave', () => {
-          popup.style.opacity = '0';
-          popup.style.pointerEvents = 'none';
-          popup.style.transform = 'translateX(-50%) translateY(8px)';
-        });
-
-        select.addEventListener('change', () => {
-          const num = select.value;
-          waLink.href = `https://wa.me/${num}?text=I%20have%20gone%20through%20your%20website%2C%20please%20call%20back`;
-        });
-      </script>
-    </div>
-  </header>
-
-<!-- HERO SECTION -->
-<div id="translation-services" style="position: relative; height: 60vh; background-image: url('/assets/translation img.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-  <div style="position: absolute; inset: 0; background: rgba(30, 58, 138, 0.78); z-index: 1;"></div>
-  <div style="position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content:space-between; flex-wrap:wrap;">
-    <div style="max-width: 620px; color: white;">
-      <div style="width:70px;height:70px;background:linear-gradient(135deg,#e0ecff,#f8fafc);border-radius:18px;margin-bottom:30px;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-language" style="font-size:35px;color:#096825;"></i></div>
-      <h2 style="font-size: 3.2rem; line-height: 1.1; margin-bottom: 24px; font-weight: 700;">Translation Services</h2>
-      <p style="font-size: 1.18rem; line-height: 1.75; margin-bottom: 40px;">Premier translation company offering certified legal, medical, technical, and business document translation in 150+ languages with precision and accuracy.</p>
-      <a href="#" style="display: inline-block; padding: 16px 36px; border: 2px solid #0b7a2d; color: white; border-radius: 50px; text-decoration: none; font-weight: 600;">Read more</a>
-    </div>
-    <div style="max-width:720px; width:100%; color:white; font-size:1.05rem;">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px 32px;">
-        <a href="?service=legal-translation" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Legal Translation</a>
-        <a href="?service=interpretation" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Interpretation Translation</a>
-        <a href="?service=technical" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Technical Translation</a>
-        <a href="?service=medical" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Medical Translation</a>
-        <a href="?service=financial" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Financial Translation</a>
-        <a href="?service=software" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Software Localization</a>
-        <a href="?service=scientific" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Scientific Translation</a>
-        <a href="?service=sworn" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Sworn Translation</a>
-        <a href="?service=certified" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Certified Translation</a>
-        <a href="?service=website-localization" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Website Localization</a>
-        <a href="?service=poa-translation" class="hero-link" style="color:white; text-decoration:none; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">POA Translation</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN LAYOUT -->
-<div style="max-width:1400px; margin:48px auto; padding:0 24px; display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap;">
-  <div style="flex:1; min-width:260px;">
-    <div id="service-title-head" style="font-family:'Merriweather',serif; color:#1e3a8a; font-size:28px; font-weight:700; margin-bottom:16px; border-left:5px solid #096825; padding-left:20px;"></div>
-    <div id="service-content-area" style="background:#fff; border-radius:28px; padding:32px 36px; box-shadow:0 8px 20px rgba(0,0,0,0.02); border:1px solid #eef2f8;">
-      <div id="dynamic-service-body"><p style="color:#6b7280;">Loading expert translation services...</p></div>
-    </div>
-  </div>
-  <div style="width:300px; flex-shrink:0;">
-    <div style="background:#fff; border-radius:10px; overflow:hidden; border:1px solid #e2e8f0; margin-bottom:24px;">
-      <div style="background:#096825; padding:16px 20px;"><span style="color:#fff; font-weight:700;">📄 Translation Services</span></div>
-      <ul id="services-sidebar-list" style="list-style:none; margin:0; padding:0;"></ul>
-    </div>
-    <div style="background:linear-gradient(105deg, #096825, #466d57); border-radius:10px; padding:22px 20px; display:flex; align-items:center; gap:16px;">
-     <div>
-  <i class="fa-regular fa-envelope" style="font-size:42px; color:rgba(255, 255, 255, 0.9);"></i>
-</div>
-      <div><div style="color:#ffffff; font-size:11px; font-weight:700;">MAIL-US</div><div style="color:#000000; font-size:16px; font-weight:100;">gcc.masterpiece@gmail.com</div><div style="color:#ffffff; font-size:12px;">Get in touch with our experts</div></div>
-    </div>
-  </div>
-</div>
-
-<script>
-  // Full services data (same slugs)
-  const SERVICES_DB = {
-    "legal-translation":{name:"Legal Translation",heading:"Professional Legal Translation Services",intro:"masterpiece is a premier translation company in Dubai, specializing in top-notch legal translation services...",body:`<p>Our expert team provides tailored legal translation in Dubai... (full content preserved)</p><h3>✅ Why Choose Our Legal Translation?</h3><p><strong>Fastrack pickup & delivery system</strong></p><ul><li>Professional translator</li><li>Editing process</li><li>Proofreading by expert</li></ul>`},
-    "interpretation":{name:"Interpretation Translation",heading:"Professional Interpretation Services",intro:"masterpiece provides world-class interpretation services...",body:`<p>Our certified interpreters are fluent in 150+ languages...</p><ul><li>Simultaneous interpretation</li><li>Consecutive interpretation</li><li>Telephone and video remote interpretation</li></ul>`},
-    "technical":{name:"Technical Translation",heading:"Expert Technical Translation Services",intro:"masterpiece delivers precise technical translation services...",body:`<ul><li>Engineering documentation</li><li>Software & IT content</li><li>Patents</li></ul>`},
-    "medical":{name:"Medical Translation",heading:"Accurate Medical Translation Services",intro:"masterpiece provides certified medical translation services...",body:`<ul><li>Patient records</li><li>Clinical trial documents</li><li>Pharmaceutical leaflets</li></ul>`},
-    "financial":{name:"Financial Translation",heading:"Reliable Financial Translation Services",intro:"masterpiece offers expert financial translation services...",body:`<ul><li>Annual reports</li><li>Audit reports</li><li>Investment prospectuses</li></ul>`},
-    "software":{name:"Software Localization",heading:"Professional Software Localization Services",intro:"masterpiece provides comprehensive software localization...",body:`<ul><li>Mobile apps</li><li>Web applications</li><li>RTL support for Arabic</li></ul>`},
-    "scientific":{name:"Scientific Translation",heading:"Precise Scientific Translation Services",intro:"masterpiece delivers highly accurate scientific translation...",body:`<ul><li>Life sciences</li><li>Chemistry</li><li>Environmental reports</li></ul>`},
-    "sworn":{name:"Sworn Translation",heading:"Certified Sworn Translation Services",intro:"masterpiece provides official sworn translation services...",body:`<ul><li>Birth/marriage certificates</li><li>Academic degrees</li><li>Court judgments</li></ul>`},
-    "certified":{name:"Certified Translation",heading:"Official Certified Translation Services",intro:"masterpiece delivers certified translation services...",body:`<ul><li>Visa applications</li><li>University admissions</li><li>Embassy submissions</li></ul>`},
-    "website-localization":{name:"Website Localization",heading:"Complete Website Localization Services",intro:"masterpiece provides end-to-end website localization...",body:`<ul><li>Content extraction</li><li>Cultural adaptation</li><li>RTL implementation</li></ul>`},
-    "poa-translation":{name:"Power of Attorney Translation",heading:"Power of Attorney Translation Services",intro:"masterpiece specializes in accurate POA translation...",body:`<ul><li>General POA</li><li>Special POA</li><li>Medical/financial POA</li></ul>`}
-  };
-  // Fill missing bodies with placeholder for brevity but keep functionality
-  for(let k in SERVICES_DB){ if(!SERVICES_DB[k].body) SERVICES_DB[k].body = `<p>Detailed content for ${SERVICES_DB[k].name} available upon request. Contact us for precise translation needs.</p>`; }
-
-  const serviceSlugsOrder = ["legal-translation","interpretation","technical","medical","financial","software","scientific","sworn","certified","website-localization","poa-translation"];
-
-  function renderServiceBySlug(slug){
-    const s = SERVICES_DB[slug] || SERVICES_DB["legal-translation"];
-    document.getElementById("service-title-head").innerText = s.heading;
-    document.getElementById("dynamic-service-body").innerHTML = `<p style="font-size:1rem; line-height:1.7; margin-bottom:20px;">${s.intro}</p><div style="font-size:1rem; line-height:1.7;">${s.body}</div><div style="margin-top:32px; border-top:1px solid #eef2f8; padding-top:24px;"><p style="font-size:14px; color:#096825;"><i class="fa-regular fa-clock"></i> Fast & reliable certified translation — contact us for instant quote.</p></div>`;
-    document.querySelectorAll('.sidebar-service-item').forEach(el => { let itemSlug = el.getAttribute('data-slug'); if(itemSlug === slug){ el.style.background="#1e3a8a"; el.style.color="white"; el.style.borderLeft="4px solid #f59e0b"; el.style.fontWeight="600"; } else { el.style.background="#fff"; el.style.color="#1f2937"; el.style.borderLeft="4px solid transparent"; el.style.fontWeight="400"; } });
-    let newUrl = window.location.pathname + "?service=" + slug;
-    window.history.pushState({slug}, "", newUrl);
-  }
-
-  function buildSidebar(){
-    let container = document.getElementById("services-sidebar-list");
-    if(!container) return;
-    container.innerHTML = "";
-    serviceSlugsOrder.forEach(slug => {
-      let s = SERVICES_DB[slug];
-      let li = document.createElement("li");
-      li.className = "sidebar-service-item";
-      li.setAttribute("data-slug", slug);
-      li.style.cssText = "padding: 14px 18px; font-size: 14px; cursor: pointer; border-bottom: 1px solid #edf2f7; border-left: 4px solid transparent; background: #fff; color: #1f2937; transition: all 0.2s; display: flex; align-items: center; gap: 8px;";
-      li.innerHTML = `<span>📄</span> ${s.name}`;
-      li.addEventListener("click", (e) => { renderServiceBySlug(slug); });
-      container.appendChild(li);
-    });
-  }
-
-  function initializeFromURL(){
-    let params = new URLSearchParams(window.location.search);
-    let service = params.get("service");
-    if(!service || !SERVICES_DB[service]) service = "legal-translation";
-    renderServiceBySlug(service);
-  }
-
-  function bindHeroLinks(){
-    document.querySelectorAll(".hero-link").forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        let href = link.getAttribute("href");
-        if(href && href.includes("service=")){
-          let slug = href.split("service=")[1];
-          if(SERVICES_DB[slug]) { renderServiceBySlug(slug); document.getElementById("service-content-area")?.scrollIntoView({behavior:"smooth"}); }
+        if (wrapper && popup) {
+            wrapper.addEventListener('mouseenter', () => {
+                popup.style.opacity = '1';
+                popup.style.pointerEvents = 'auto';
+                popup.style.transform = 'translateX(-50%) translateY(0)';
+            });
+            wrapper.addEventListener('mouseleave', () => {
+                popup.style.opacity = '0';
+                popup.style.pointerEvents = 'none';
+                popup.style.transform = 'translateX(-50%) translateY(8px)';
+            });
         }
-      });
-    });
-  }
-
-  function initSupportPopup(){
-    let wrapper = document.getElementById('support-wrapper'), popup = document.getElementById('support-popup');
-    if(wrapper && popup){
-      wrapper.addEventListener('mouseenter',()=>{ popup.style.opacity='1'; popup.style.pointerEvents='auto'; popup.style.transform='translateX(-50%) translateY(0)'; });
-      wrapper.addEventListener('mouseleave',()=>{ popup.style.opacity='0'; popup.style.pointerEvents='none'; popup.style.transform='translateX(-50%) translateY(8px)'; });
-      let select = document.getElementById('wa-number-select'), waLink = document.getElementById('wa-link');
-      if(select && waLink) select.addEventListener('change',()=>{ waLink.href = `https://wa.me/${select.value}?text=I%20have%20gone%20through%20your%20website%2C%20please%20call%20back`; });
+        if (select && waLink) {
+            select.addEventListener('change', () => {
+                waLink.href =
+                    `https://wa.me/${select.value}?text=I%20have%20gone%20through%20your%20website%2C%20please%20call%20back`;
+            });
+        }
     }
-  }
 
-  window.addEventListener('popstate', () => { let slug = new URLSearchParams(window.location.search).get("service"); if(slug && SERVICES_DB[slug]) renderServiceBySlug(slug); else renderServiceBySlug("legal-translation"); });
-  window.addEventListener("DOMContentLoaded", () => { buildSidebar(); initializeFromURL(); bindHeroLinks(); initSupportPopup(); });
+    /* ── Mobile nav ── */
+    function initMobileNav() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function openNav() {
+            mobileNav.classList.add('open');
+            hamburger.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNav() {
+            mobileNav.classList.remove('open');
+            hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.contains('open') ? closeNav() : openNav();
+        });
+        overlay.addEventListener('click', closeNav);
+    }
+
+    /* ── Mobile accordion ── */
+    function toggleMobSection(header) {
+        const subLinks = header.nextElementSibling;
+        const isOpen = subLinks.classList.contains('open');
+        // close all
+        document.querySelectorAll('.mob-sub-links.open').forEach(el => el.classList.remove('open'));
+        document.querySelectorAll('.mob-section-header.expanded').forEach(el => el.classList.remove('expanded'));
+        // open clicked if was closed
+        if (!isOpen) {
+            subLinks.classList.add('open');
+            header.classList.add('expanded');
+        }
+    }
+
+    /* ── Popstate ── */
+    window.addEventListener('popstate', () => {
+        const slug = new URLSearchParams(window.location.search).get("service");
+        if (slug && SERVICES_DB[slug]) renderServiceBySlug(slug);
+        else renderServiceBySlug("poa");
+    });
+
+    /* ── DOM Ready ── */
+    window.addEventListener("DOMContentLoaded", () => {
+        buildSidebar();
+        initializeFromURL();
+        bindHeroLinks();
+        initSupportPopup();
+        initMobileNav();
+    });
 </script>
-
-
-<!-- ====================== FOOTER SECTION ====================== -->
-  <footer
-    style="background: #0f172a; color: #e2e8f0; padding: 80px 0 30px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px;">
-
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 50px; margin-bottom: 60px;">
-
-        <!-- Logo & About -->
-        <div>
-          <div style="margin-bottom: 16px;">
-            <img src="assets/logo2nd.PNG" alt="Masterpiece Logo" style="height: 2.2rem; width: auto; display: block;">
-          </div>
-          <p style="color: #94a3b8; line-height: 1.7; max-width: 280px; margin-bottom: 24px;">
-            Your trusted partner for Translation, Attestation, Business Setup, Visa & Notarization services.
-          </p>
-
-          <!-- Social Media -->
-          <div class="social-icons" style="display: flex; gap: 12px;">
-            <a href="#"
-              style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #1e293b; border-radius: 50%; color: #94a3b8; text-decoration: none;">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#"
-              style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #1e293b; border-radius: 50%; color: #94a3b8; text-decoration: none;">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#"
-              style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #1e293b; border-radius: 50%; color: #94a3b8; text-decoration: none;">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#"
-              style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #1e293b; border-radius: 50%; color: #94a3b8; text-decoration: none;">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="#"
-              style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #1e293b; border-radius: 50%; color: #94a3b8; text-decoration: none;">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Services Column 1 -->
-        <div>
-          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px;">Services</h4>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 1.02rem;">
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Translation Services</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Attestation Services</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Business Setup</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Visa Services</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Notarization Services</a>
-          </div>
-        </div>
-
-        <!-- Translation Sub Services -->
-        <div>
-          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px;">Translation</h4>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 1.02rem;">
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Legal Translation</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Medical Translation</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Technical Translation</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Certified Translation</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Website Localization</a>
-          </div>
-        </div>
-
-        <!-- Other Services -->
-        <div>
-          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px;">Quick Links</h4>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 1.02rem;">
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Attestation</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Business Setup</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Visa Services</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Notarization</a>
-            <a href="#" style="color: #94a3b8; text-decoration: none;">Track Application</a>
-          </div>
-        </div>
-
-        <!-- Contact Details -->
-        <div>
-          <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px;">Contact Us</h4>
-          <div style="font-size: 1.02rem; line-height: 2;">
-            <div style="margin-bottom: 16px;">
-              <strong style="color: #cbd5e1;">Mobile:</strong><br>
-              <span style="color: #60a5fa;">+971 58 995 8440</span>
-            </div>
-            <div>
-              <strong style="color: #cbd5e1;">Email:</strong><br>
-              <a href="mailto:gcc.masterpiece@gmail.com"
-                style="color: #60a5fa; text-decoration: none;">gcc.masterpiece@gmail.com</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div
-        style="border-top: 1px solid #334155; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 0.95rem; color: #94a3b8;">
-        <div>
-          &copy; 2026 Masterpiece. All Rights Reserved.
-        </div>
-        <div style="display: flex; gap: 24px;">
-          <a href="#" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-          <a href="#" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
-        </div>
-        <div>
-          Delivering trusted services worldwide.
-        </div>
-      </div>
-
-    </div>
-  </footer>
 
 </body>
 </html>
