@@ -4,7 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASTERPIECE - Growth is Crafting Here!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta name="description" content="Masterpiece provides certified legal translation, certificate attestation, business setup, visa processing, and document notarization services in Dubai and Al Ain, UAE.">
+  <meta property="og:title" content="MASTERPIECE - Growth is Crafting Here! | Typing, Translation & Business Setup UAE">
+  <meta property="og:description" content="Masterpiece provides certified legal translation, certificate attestation, business setup, visa processing, and document notarization services in Dubai and Al Ain, UAE.">
+  <meta property="og:image" content="https://masterpieceuae.com/assets/logo.webp">
+  <meta property="og:url" content="https://masterpieceuae.com/">
+  <meta property="og:type" content="website">
+  <title>MASTERPIECE - Growth is Crafting Here! | Typing, Translation & Business Setup UAE</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -36,7 +45,8 @@
       background: rgba(0,0,0,0.4);
       z-index: 200;
     }
-    #mobile-nav {
+    #mobile-nav { visibility: hidden;
+
       position: fixed;
       top: 0;
       left: -320px;
@@ -48,7 +58,7 @@
       transition: left 0.3s ease;
       padding: 20px 0 40px;
     }
-    #mobile-nav.open { left: 0; }
+    #mobile-nav.open { left: 0; visibility: visible; }
     #mobile-nav-overlay.open { display: block; }
     .mobile-nav-close {
       display: flex;
@@ -111,7 +121,7 @@
 
     /* ── HERO ── */
     .hero-section {
-      background: url('/assets/85e89334-4be8-4115-941c-d44072bcdea3.jpg') center/cover no-repeat;
+      background: url('/assets/hero-bg.webp') center/cover no-repeat;
       color: white;
       min-height: 85vh;
       display: flex;
@@ -331,7 +341,92 @@
 
       #find-us .info-card { padding: 24px !important; }
     }
+      a:focus, button:focus, select:focus { outline: 2px solid #096825; outline-offset: 2px; }
+    .nav-dropdown-wrapper:focus-within .dd { display: grid !important; }
+    .nav-dropdown-wrapper:focus-within .dd:not([style*="grid-template-columns:1fr 1fr"]) { display: block !important; }
   </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://masterpieceuae.com/#organization",
+      "name": "Masterpiece Typing & Travels LLC",
+      "url": "https://masterpieceuae.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://masterpieceuae.com/assets/logo.webp",
+        "caption": "Masterpiece Typing & Travels"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971-58-995-8440",
+        "contactType": "customer service",
+        "areaServed": "AE",
+        "availableLanguage": [
+          "en",
+          "ar"
+        ]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://masterpieceuae.com/#localbusiness",
+      "name": "Masterpiece Typing & Travels LLC",
+      "image": "https://masterpieceuae.com/assets/office-image.webp",
+      "telephone": "+971-58-995-8440",
+      "email": "gcc.masterpiece@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Twar 4",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.261344",
+        "longitude": "55.389508"
+      },
+      "url": "https://masterpieceuae.com/",
+      "priceRange": "$"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://masterpieceuae.com/#website",
+      "url": "https://masterpieceuae.com/",
+      "name": "Masterpiece Typing & Travels",
+      "publisher": {
+        "@id": "https://masterpieceuae.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://masterpieceuae.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Masterpiece Typing & Travels provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Masterpiece provides legal translation, certificate attestation, business setup, visa processing, and document notarization services in the UAE."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Masterpiece for support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can contact us via phone or WhatsApp at +971 58 995 8440 or by emailing us at gcc.masterpiece@gmail.com."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body style="margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8fafc;">
@@ -340,7 +435,7 @@
   <div id="mobile-nav-overlay" onclick="closeMobileNav()"></div>
   <nav id="mobile-nav">
     <div class="mobile-nav-close">
-      <button onclick="closeMobileNav()">✕</button>
+      <button onclick="closeMobileNav()" aria-label="Close menu">✕</button>
     </div>
     <details class="mobile-nav-section">
       <summary>Translation</summary>
@@ -353,54 +448,54 @@
       <a href="translation.html?service=scientific">Scientific Translation</a>
       <a href="translation.html?service=sworn-translation">Sworn Translation</a>
       <a href="translation.html?service=certified-translation">Certified Translation</a>
-      <a href="translation.html?service=website-localisation">Website Localisation</a>
+      <a href="translation.html?service=website-localization">Website Localisation</a>
       <a href="translation.html?service=poa-translation">POA Translation</a>
     </details>
     <details class="mobile-nav-section">
       <summary>Attestation</summary>
-      <a href="educational.html">Educational Certificates</a>
-      <a href="marriage.html">Marriage Certificate</a>
-      <a href="birth.html">Birth Certificate</a>
-      <a href="medical.html">Medical Certificates</a>
-      <a href="degree.html">Degree Certificate</a>
-      <a href="diploma.html">Diploma Certificates</a>
-      <a href="death.html">Death Certificate</a>
-      <a href="uk.html">UK Certificate</a>
-      <a href="usa.html">USA Certificate</a>
-      <a href="indian.html">Indian Certificate</a>
-      <a href="mofa.html">MOFA Attestation</a>
-      <a href="pakistan.html">Pakistan Attestation</a>
-      <a href="philippines.html">Philippines Attestation</a>
+      <a href="attestation.html?service=educational-certificates">Educational Certificates</a>
+      <a href="attestation.html?service=marriage-certificate">Marriage Certificate</a>
+      <a href="attestation.html?service=birth-certificate">Birth Certificate</a>
+      <a href="attestation.html?service=medical-certificates">Medical Certificates</a>
+      <a href="attestation.html?service=degree-certificate">Degree Certificate</a>
+      <a href="attestation.html?service=diploma-certificates">Diploma Certificates</a>
+      <a href="attestation.html?service=death-certificate">Death Certificate</a>
+      <a href="attestation.html?service=uk-certificate">UK Certificate</a>
+      <a href="attestation.html?service=usa-certificate">USA Certificate</a>
+      <a href="attestation.html?service=indian-certificate">Indian Certificate</a>
+      <a href="attestation.html?service=mofa-attestation">MOFA Attestation</a>
+      <a href="attestation.html?service=pakistan-attestation">Pakistan Attestation</a>
+      <a href="attestation.html?service=philippines-attestation">Philippines Attestation</a>
     </details>
     <details class="mobile-nav-section">
       <summary>Business Setup</summary>
-      <a href="freezone.html">Free Zone Business</a>
-      <a href="mainland.html">Mainland Business</a>
-      <a href="offshore.html">Offshore Business</a>
-      <a href="trademark.html">Trademark Registration</a>
-      <a href="bank.html">Company Bank Account</a>
+      <a href="business.html?service=freezone">Free Zone Business</a>
+      <a href="business.html?service=mainland">Mainland Business</a>
+      <a href="business.html?service=offshore">Offshore Business</a>
+      <a href="business.html?service=trademark">Trademark Registration</a>
+      <a href="business.html?service=bank-account">Company Bank Account</a>
     </details>
     <details class="mobile-nav-section">
       <summary>Visa</summary>
-      <a href="business-visa.html">Business Visa</a>
-      <a href="investor.html">Investor Visa</a>
-      <a href="employment.html">Employment Visa</a>
-      <a href="family.html">Family Visa</a>
-      <a href="tourist.html">Tourist Visa</a>
-      <a href="freelance.html">Freelance Visa</a>
-      <a href="maid.html">Maid Visa</a>
+      <a href="visa.html?service=business-visa">Business Visa</a>
+      <a href="visa.html?service=investor-visa">Investor Visa</a>
+      <a href="visa.html?service=employment-visa">Employment Visa</a>
+      <a href="visa.html?service=family-visa">Family Visa</a>
+      <a href="visa.html?service=tourist-visa">Tourist Visa</a>
+      <a href="visa.html?service=freelance-visa">Freelance Visa</a>
+      <a href="visa.html?service=maid-visa">Maid Visa</a>
     </details>
     <details class="mobile-nav-section">
       <summary>Notarization</summary>
-      <a href="poa.html">Power of Attorney</a>
-      <a href="moa.html">MOA &amp; Amendments</a>
-      <a href="mou.html">MOU</a>
-      <a href="noc.html">NOC</a>
-      <a href="legal.html">Legal Notices</a>
-      <a href="wills.html">Wills &amp; Agreements</a>
-      <a href="undertaking.html">Undertaking Letters</a>
-      <a href="affidavit.html">Sworn Affidavits</a>
-      <a href="court.html">Court Memorandum</a>
+      <a href="notarization.html?service=poa">Power of Attorney</a>
+      <a href="notarization.html?service=moa">MOA &amp; Amendments</a>
+      <a href="notarization.html?service=mou">MOU</a>
+      <a href="notarization.html?service=noc">NOC</a>
+      <a href="notarization.html?service=legal">Legal Notices</a>
+      <a href="notarization.html?service=wills">Wills &amp; Agreements</a>
+      <a href="notarization.html?service=undertaking">Undertaking Letters</a>
+      <a href="notarization.html?service=affidavit">Sworn Affidavits</a>
+      <a href="notarization.html?service=court">Court Memorandum</a>
     </details>
     <div class="mobile-nav-cta">
       <a href="mailto:gcc.masterpiece@gmail.com" style="border: 2px solid #096825; color: #096825;">Get Support</a>
@@ -414,7 +509,7 @@
 
       <!-- Logo -->
       <a href="#" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-        <img src="/assets/logo.PNG" alt="MASTERPIECE" style="height:30px;">
+        <img src="/assets/logo.webp" alt="MASTERPIECE" style="height:30px;">
       </a>
 
       <!-- Hamburger -->
@@ -427,7 +522,7 @@
         style="display:flex; gap:0; font-weight:500; background:#fff; border-bottom:1px solid #e5e7eb; padding:0 1.5rem;">
 
         <!-- Translation -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+        <div class="nav-dropdown-wrapper" style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
           onmouseout="this.querySelector('.dd').style.display='none'">
           <a href="translation.html" style="text-decoration:none;">
             <div
@@ -451,13 +546,13 @@
             <a href="translation.html?service=scientific" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Scientific Translation</a>
             <a href="translation.html?service=sworn" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Translation</a>
             <a href="translation.html?service=certified" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Certified Translation</a>
-            <a href="translation.html?service=website-localisation" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Website Localisation</a>
+            <a href="translation.html?service=website-localization" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Website Localisation</a>
             <a href="translation.html?service=poa-translation" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">POA Translation</a>
           </div>
         </div>
 
         <!-- Attestation -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='grid'"
+        <div class="nav-dropdown-wrapper" style="position:relative;" onmouseover="this.querySelector('.dd').style.display='grid'"
           onmouseout="this.querySelector('.dd').style.display='none'">
           <a href="attestation.html" style="text-decoration:none;">
             <div
@@ -472,24 +567,24 @@
           </a>
           <div class="dd"
             style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:320px; z-index:100; grid-template-columns:1fr 1fr;">
-            <a href="educational.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Educational Certificates</a>
-            <a href="marriage.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Marriage Certificate</a>
-            <a href="birth.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Birth Certificate</a>
-            <a href="medical.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Certificates</a>
-            <a href="degree.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Degree Certificate</a>
-            <a href="diploma.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Diploma Certificates</a>
-            <a href="death.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Death Certificate</a>
-            <a href="uk.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">UK Certificate</a>
-            <a href="usa.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">USA Certificate</a>
-            <a href="indian.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Indian Certificate</a>
-            <a href="mofa.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOFA Attestation</a>
-            <a href="pakistan.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Pakistan Attestation</a>
-            <a href="philippines.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Philippines Attestation</a>
+            <a href="attestation.html?service=educational-certificates" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Educational Certificates</a>
+            <a href="attestation.html?service=marriage-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Marriage Certificate</a>
+            <a href="attestation.html?service=birth-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Birth Certificate</a>
+            <a href="attestation.html?service=medical-certificates" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Medical Certificates</a>
+            <a href="attestation.html?service=degree-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Degree Certificate</a>
+            <a href="attestation.html?service=diploma-certificates" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Diploma Certificates</a>
+            <a href="attestation.html?service=death-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Death Certificate</a>
+            <a href="attestation.html?service=uk-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">UK Certificate</a>
+            <a href="attestation.html?service=usa-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">USA Certificate</a>
+            <a href="attestation.html?service=indian-certificate" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Indian Certificate</a>
+            <a href="attestation.html?service=mofa-attestation" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOFA Attestation</a>
+            <a href="attestation.html?service=pakistan-attestation" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Pakistan Attestation</a>
+            <a href="attestation.html?service=philippines-attestation" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Philippines Attestation</a>
           </div>
         </div>
 
         <!-- Business Setup -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+        <div class="nav-dropdown-wrapper" style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
           onmouseout="this.querySelector('.dd').style.display='none'">
           <a href="business.html" style="text-decoration:none;">
             <div
@@ -504,16 +599,16 @@
           </a>
           <div class="dd"
             style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="freezone.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Free Zone Business</a>
-            <a href="mainland.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Mainland Business</a>
-            <a href="offshore.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Offshore Business</a>
-            <a href="trademark.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Trademark Registration</a>
-            <a href="bank.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Company Bank Account</a>
+            <a href="business.html?service=freezone" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Free Zone Business</a>
+            <a href="business.html?service=mainland" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Mainland Business</a>
+            <a href="business.html?service=offshore" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Offshore Business</a>
+            <a href="business.html?service=trademark" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Trademark Registration</a>
+            <a href="business.html?service=bank-account" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Company Bank Account</a>
           </div>
         </div>
 
         <!-- Visa -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+        <div class="nav-dropdown-wrapper" style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
           onmouseout="this.querySelector('.dd').style.display='none'">
           <a href="visa.html" style="text-decoration:none;">
             <div
@@ -528,18 +623,18 @@
           </a>
           <div class="dd"
             style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="business-visa.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Business Visa</a>
-            <a href="investor.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Investor Visa</a>
-            <a href="employment.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Employment Visa</a>
-            <a href="family.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Family Visa</a>
-            <a href="tourist.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Tourist Visa</a>
-            <a href="freelance.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Freelance Visa</a>
-            <a href="maid.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Maid Visa</a>
+            <a href="visa.html?service=business-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Business Visa</a>
+            <a href="visa.html?service=investor-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Investor Visa</a>
+            <a href="visa.html?service=employment-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Employment Visa</a>
+            <a href="visa.html?service=family-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Family Visa</a>
+            <a href="visa.html?service=tourist-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Tourist Visa</a>
+            <a href="visa.html?service=freelance-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Freelance Visa</a>
+            <a href="visa.html?service=maid-visa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Maid Visa</a>
           </div>
         </div>
 
         <!-- Notarization -->
-        <div style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
+        <div class="nav-dropdown-wrapper" style="position:relative;" onmouseover="this.querySelector('.dd').style.display='block'"
           onmouseout="this.querySelector('.dd').style.display='none'">
           <a href="notarization.html" style="text-decoration:none;">
             <div
@@ -554,15 +649,15 @@
           </a>
           <div class="dd"
             style="display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); padding:6px; min-width:220px; z-index:100;">
-            <a href="poa.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Power of Attorney</a>
-            <a href="moa.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOA &amp; Amendments</a>
-            <a href="mou.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOU</a>
-            <a href="noc.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">NOC</a>
-            <a href="legal.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Notices</a>
-            <a href="wills.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Wills &amp; Agreements</a>
-            <a href="undertaking.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Undertaking Letters</a>
-            <a href="affidavit.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Affidavits</a>
-            <a href="court.html" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Court Memorandum</a>
+            <a href="notarization.html?service=poa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Power of Attorney</a>
+            <a href="notarization.html?service=moa" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOA &amp; Amendments</a>
+            <a href="notarization.html?service=mou" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">MOU</a>
+            <a href="notarization.html?service=noc" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">NOC</a>
+            <a href="notarization.html?service=legal" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Legal Notices</a>
+            <a href="notarization.html?service=wills" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Wills &amp; Agreements</a>
+            <a href="notarization.html?service=undertaking" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Undertaking Letters</a>
+            <a href="notarization.html?service=affidavit" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Sworn Affidavits</a>
+            <a href="notarization.html?service=court" style="display:block; padding:8px 12px; font-size:13px; color:#444; text-decoration:none; border-radius:6px;" onmouseover="this.style.background='#f1f5ff'; this.style.color='#1e3a8a';" onmouseout="this.style.background='transparent'; this.style.color='#444';">Court Memorandum</a>
           </div>
         </div>
 
@@ -584,7 +679,7 @@
                   <p style="color:#ffffff; font-size:15px; font-weight:300; margin:0;">gcc.masterpiece@gmail.com</p>
                 </div>
                 <div style="flex:1; min-width:0;">
-                  <p style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0;">Request a call back</p>
+                  <label for="wa-number-select" style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0; display:block;">Request a call back</label>
                   <select id="wa-number-select" style="width:100%; padding:7px 15px; border-radius:6px; border:none; font-size:13px; color:#1e3a8a; font-weight:500; background:#ffffff; appearance:auto; box-sizing:border-box; margin-bottom:8px;">
                     <option value="97156681396">UAE +971 58 995 8440</option>
                   </select>
@@ -701,12 +796,12 @@
       </a>
     </div>
     <div style="flex:1; position:relative; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
-      <img src="/assets/WhatsApp Image 2026-04-21 at 1.53.37 PM.jpeg" alt="Masterpiece Building" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <img src="/assets/office-image.webp" loading="lazy" alt="Masterpiece Building" style="width:100%; height:100%; object-fit:cover; display:block;">
     </div>
   </div>
 
   <!-- ====================== TRANSLATION SERVICES ====================== -->
-  <div id="translation-services" class="service-parallax" style="background-image:url('/assets/translation img.jpg');">
+  <div id="translation-services" class="service-parallax" style="background-image:url('/assets/translation-img.webp');">
     <div style="position:absolute; inset:0; background:rgba(30,58,138,0.78); z-index:1;"></div>
     <div class="service-parallax-inner" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
       <div class="service-parallax-left">
@@ -722,17 +817,17 @@
       <div class="service-parallax-right">
         <div style="max-width:720px; width:100%; color:white; font-size:1.05rem; line-height:1.8;">
           <div class="svc-links-grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));">
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Legal Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Interpretation Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Technical Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Medical Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Financial Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Software Localization</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Scientific Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Sworn Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Certified Translation</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">Website Localization</a>
-            <a href="#" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';">POA Translation</a>
+            <a href="translation.html?service=legal-translation" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Legal Translation</a>
+            <a href="translation.html?service=interpretation" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Interpretation</a>
+            <a href="translation.html?service=technical" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Technical Translation</a>
+            <a href="translation.html?service=medical" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Medical Translation</a>
+            <a href="translation.html?service=financial" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Financial Translation</a>
+            <a href="translation.html?service=software" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Software Localization</a>
+            <a href="translation.html?service=scientific" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Scientific Translation</a>
+            <a href="translation.html?service=sworn" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Sworn Translation</a>
+            <a href="translation.html?service=certified" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Certified Translation</a>
+            <a href="translation.html?service=website-localization" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >Website Localization</a>
+            <a href="translation.html?service=poa-translation" style="color:white; text-decoration:none; display:inline-block; transition:all 0.25s ease;" onmouseover="this.style.transform='translateX(4px)'; this.style.color='#ccc';" onmouseout="this.style.transform='translateX(0)'; this.style.color='white';" >POA Translation</a>
           </div>
         </div>
       </div>
@@ -750,7 +845,7 @@
   </div>
 
   <!-- ====================== ATTESTATION SERVICES ====================== -->
-  <div class="service-parallax" style="background-image:url('/assets/attestation img.jpg');">
+  <div class="service-parallax" style="background-image:url('/assets/attestation-img.webp');">
     <div style="position:absolute; inset:0; background:rgba(30,58,138,0.78); z-index:1;"></div>
     <div class="service-parallax-inner" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
       <div class="service-parallax-left">
@@ -794,7 +889,7 @@
   </div>
 
   <!-- ====================== BUSINESS SETUP SERVICES ====================== -->
-  <div class="service-parallax" style="background-image:url('/assets/Business img.jpg');">
+  <div class="service-parallax" style="background-image:url('/assets/business-img.webp');">
     <div style="position:absolute; inset:0; background:rgba(30,58,138,0.78); z-index:1;"></div>
     <div class="service-parallax-inner" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
       <div class="service-parallax-left">
@@ -830,7 +925,7 @@
   </div>
 
   <!-- ====================== VISA SERVICES ====================== -->
-  <div class="service-parallax" style="background-image:url('/assets/visa img.jpg');">
+  <div class="service-parallax" style="background-image:url('/assets/visa-img.webp');">
     <div style="position:absolute; inset:0; background:rgba(30,58,138,0.78); z-index:1;"></div>
     <div class="service-parallax-inner" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
       <div class="service-parallax-left">
@@ -868,7 +963,7 @@
   </div>
 
   <!-- ====================== NOTARIZATION SERVICES ====================== -->
-  <div class="service-parallax" style="background-image:url('/assets/notarization img.jpg');">
+  <div class="service-parallax" style="background-image:url('/assets/notarization-img.webp');">
     <div style="position:absolute; inset:0; background:rgba(30,58,138,0.78); z-index:1;"></div>
     <div class="service-parallax-inner" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
       <div class="service-parallax-left">
@@ -917,18 +1012,18 @@
         </p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:24px;">
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 1" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/collabed one.png" alt="Client 2" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/collabed two.png" alt="Client 3" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 4" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 5" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 6" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 7" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 8" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 9" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 10" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 11" style="max-height:65px; width:auto; max-width:100%;"></div>
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.PNG" alt="Client 12" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 1" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/collabed-one.webp" loading="lazy" alt="Client 2" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/collabed-two.webp" loading="lazy" alt="Client 3" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 4" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 5" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 6" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 7" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 8" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 9" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 10" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 11" style="max-height:65px; width:auto; max-width:100%;"></div>
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:12px; height:110px; display:flex; align-items:center; justify-content:center; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.04);"><img src="/assets/logo.webp" alt="Client 12" style="max-height:65px; width:auto; max-width:100%;"></div>
       </div>
     </div>
   </div>
@@ -984,11 +1079,11 @@
         </div>
 
         <div style="flex:1.5; min-width:300px; border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-          <iframe id="abudhabiMap"
+          <iframe id="abudhabiMap" loading="lazy"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.7805325210034!2d55.83131587514033!3d24.144344378403687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab9914d48d3cf%3A0x85365b0d8e374c2c!2sMasterpiece%20Typing%20and%20Travels%20LLC!5e0!3m2!1sen!2sin!4v1776761219978!5m2!1sen!2sin"
             width="100%" height="420" style="border:0; display:block;" loading="lazy">
           </iframe>
-          <iframe id="dubaiMap"
+          <iframe id="dubaiMap" loading="lazy"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14433.09864455151!2d55.38950860048389!3d25.26134439271197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dd76e01067b%3A0xa722bdf3f51faf22!2sAl%20Twar%204%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1776763070350!5m2!1sen!2sin"
             width="100%" height="420" style="border:0; display:none;" loading="lazy">
           </iframe>
@@ -1006,7 +1101,7 @@
 
         <div>
           <div style="margin-bottom:16px;">
-            <img src="assets/logo2nd.PNG" alt="Masterpiece Logo" style="height:2.2rem; width:auto; display:block;">
+            <img src="assets/logo2nd.webp" alt="Masterpiece Logo" style="height:2.2rem; width:auto; display:block;">
           </div>
           <p style="color:#94a3b8; line-height:1.7; max-width:280px; margin-bottom:24px;">
             Your trusted partner for Translation, Attestation, Business Setup, Visa & Notarization services.

@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Masterpiece Attestation Services | Certificate Attestation & Legalization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta name="description" content="Fast and secure attestation for educational (degree, diploma) and personal (marriage, birth) certificates. Fully approved by MOFA and foreign embassies.">
+  <meta property="og:title" content="Certificate Attestation & Legalization Services | Masterpiece UAE">
+  <meta property="og:description" content="Fast and secure attestation for educational (degree, diploma) and personal (marriage, birth) certificates. Fully approved by MOFA and foreign embassies.">
+  <meta property="og:image" content="https://masterpieceuae.com/assets/logo.webp">
+  <meta property="og:url" content="https://masterpieceuae.com/attestation.html">
+  <meta property="og:type" content="website">
+    <title>Certificate Attestation & Legalization Services | Masterpiece UAE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -300,7 +309,7 @@
             position: relative;
             height: 60vh;
             min-height: 340px;
-            background-image: url('/assets/attestation img.jpg');
+            background-image: url('/assets/attestation-img.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -679,7 +688,88 @@
                 gap: 8px;
             }
         }
+            a:focus, button:focus, select:focus { outline: 2px solid #096825; outline-offset: 2px; }
+        .nav-item:focus-within .dropdown { display: grid !important; }
+        .nav-item:focus-within .dropdown-single { grid-template-columns: 1fr !important; }
     </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://masterpieceuae.com/#organization",
+      "name": "Masterpiece Typing & Travels LLC",
+      "url": "https://masterpieceuae.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://masterpieceuae.com/assets/logo.webp",
+        "caption": "Masterpiece Typing & Travels"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971-58-995-8440",
+        "contactType": "customer service",
+        "areaServed": "AE",
+        "availableLanguage": [
+          "en",
+          "ar"
+        ]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://masterpieceuae.com/#localbusiness",
+      "name": "Masterpiece Typing & Travels LLC",
+      "image": "https://masterpieceuae.com/assets/office-image.webp",
+      "telephone": "+971-58-995-8440",
+      "email": "gcc.masterpiece@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Twar 4",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.261344",
+        "longitude": "55.389508"
+      },
+      "url": "https://masterpieceuae.com/",
+      "priceRange": "$"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://masterpieceuae.com/attestation.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://masterpieceuae.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Attestation Services",
+          "item": "https://masterpieceuae.com/attestation.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://masterpieceuae.com/attestation.html#service",
+      "name": "Certificate Attestation Services",
+      "provider": {
+        "@id": "https://masterpieceuae.com/#organization"
+      },
+      "description": "Secure degree, diploma, marriage, and birth certificate attestation services approved by MOFA UAE."
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
@@ -690,7 +780,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo-link">
-                <img src="/assets/logo.PNG" alt="MASTERPIECE" />
+                <img src="/assets/logo.webp" alt="MASTERPIECE" />
             </a>
 
             <!-- Desktop Navigation -->
@@ -747,11 +837,11 @@
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                     </a>
                     <div class="dropdown dropdown-single">
-                        <a href="freezone.html" class="dd-link">Free Zone Business</a>
-                        <a href="mainland.html" class="dd-link">Mainland Business</a>
-                        <a href="offshore.html" class="dd-link">Offshore Business</a>
-                        <a href="trademark.html" class="dd-link">Trademark Registration</a>
-                        <a href="bank.html" class="dd-link">Company Bank Account</a>
+                        <a href="business.html?service=freezone" class="dd-link">Free Zone Business</a>
+                        <a href="business.html?service=mainland" class="dd-link">Mainland Business</a>
+                        <a href="business.html?service=offshore" class="dd-link">Offshore Business</a>
+                        <a href="business.html?service=trademark" class="dd-link">Trademark Registration</a>
+                        <a href="business.html?service=bank-account" class="dd-link">Company Bank Account</a>
                     </div>
                 </div>
 
@@ -762,13 +852,13 @@
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                     </a>
                     <div class="dropdown dropdown-single">
-                        <a href="business-visa.html" class="dd-link">Business Visa</a>
-                        <a href="investor.html" class="dd-link">Investor Visa</a>
-                        <a href="employment.html" class="dd-link">Employment Visa</a>
-                        <a href="family.html" class="dd-link">Family Visa</a>
-                        <a href="tourist.html" class="dd-link">Tourist Visa</a>
-                        <a href="freelance.html" class="dd-link">Freelance Visa</a>
-                        <a href="maid.html" class="dd-link">Maid Visa</a>
+                        <a href="visa.html?service=business-visa" class="dd-link">Business Visa</a>
+                        <a href="visa.html?service=investor-visa" class="dd-link">Investor Visa</a>
+                        <a href="visa.html?service=employment-visa" class="dd-link">Employment Visa</a>
+                        <a href="visa.html?service=family-visa" class="dd-link">Family Visa</a>
+                        <a href="visa.html?service=tourist-visa" class="dd-link">Tourist Visa</a>
+                        <a href="visa.html?service=freelance-visa" class="dd-link">Freelance Visa</a>
+                        <a href="visa.html?service=maid-visa" class="dd-link">Maid Visa</a>
                     </div>
                 </div>
 
@@ -779,15 +869,15 @@
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                     </a>
                     <div class="dropdown dropdown-single">
-                        <a href="poa.html" class="dd-link">Power of Attorney</a>
-                        <a href="moa.html" class="dd-link">MOA &amp; Amendments</a>
-                        <a href="mou.html" class="dd-link">MOU</a>
-                        <a href="noc.html" class="dd-link">NOC</a>
-                        <a href="legal.html" class="dd-link">Legal Notices</a>
-                        <a href="wills.html" class="dd-link">Wills &amp; Agreements</a>
-                        <a href="undertaking.html" class="dd-link">Undertaking Letters</a>
-                        <a href="affidavit.html" class="dd-link">Sworn Affidavits</a>
-                        <a href="court.html" class="dd-link">Court Memorandum</a>
+                        <a href="notarization.html?service=poa" class="dd-link">Power of Attorney</a>
+                        <a href="notarization.html?service=moa" class="dd-link">MOA &amp; Amendments</a>
+                        <a href="notarization.html?service=mou" class="dd-link">MOU</a>
+                        <a href="notarization.html?service=noc" class="dd-link">NOC</a>
+                        <a href="notarization.html?service=legal" class="dd-link">Legal Notices</a>
+                        <a href="notarization.html?service=wills" class="dd-link">Wills &amp; Agreements</a>
+                        <a href="notarization.html?service=undertaking" class="dd-link">Undertaking Letters</a>
+                        <a href="notarization.html?service=affidavit" class="dd-link">Sworn Affidavits</a>
+                        <a href="notarization.html?service=court" class="dd-link">Court Memorandum</a>
                     </div>
                 </div>
             </nav>
@@ -807,7 +897,7 @@
                                     <p style="color:#ffffff; font-size:15px; font-weight:300; margin:0;">gcc.masterpiece@gmail.com</p>
                                 </div>
                                 <div class="popup-right">
-                                    <p style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0;">Request a call back</p>
+                                    <label for="wa-number-select" style="color:#c5d9f5; font-size:12px; margin:0 0 8px 0; display:block;">Request a call back</label>
                                     <select id="wa-number-select" style="width:100%; padding:7px 15px; border-radius:6px; border:none; font-size:13px; color:#1e3a8a; font-weight:500; background:#ffffff; appearance:auto; box-sizing:border-box; margin-bottom:8px;">
                                         <option value="97156681396">UAE +971 58 995 8440</option>
                                     </select>
@@ -882,11 +972,11 @@
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </div>
         <div class="mob-sub-links">
-            <a href="freezone.html" class="mob-link">Free Zone Business</a>
-            <a href="mainland.html" class="mob-link">Mainland Business</a>
-            <a href="offshore.html" class="mob-link">Offshore Business</a>
-            <a href="trademark.html" class="mob-link">Trademark Registration</a>
-            <a href="bank.html" class="mob-link">Company Bank Account</a>
+            <a href="business.html?service=freezone" class="mob-link">Free Zone Business</a>
+            <a href="business.html?service=mainland" class="mob-link">Mainland Business</a>
+            <a href="business.html?service=offshore" class="mob-link">Offshore Business</a>
+            <a href="business.html?service=trademark" class="mob-link">Trademark Registration</a>
+            <a href="business.html?service=bank-account" class="mob-link">Company Bank Account</a>
         </div>
 
         <!-- Visa -->
@@ -895,13 +985,13 @@
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </div>
         <div class="mob-sub-links">
-            <a href="business-visa.html" class="mob-link">Business Visa</a>
-            <a href="investor.html" class="mob-link">Investor Visa</a>
-            <a href="employment.html" class="mob-link">Employment Visa</a>
-            <a href="family.html" class="mob-link">Family Visa</a>
-            <a href="tourist.html" class="mob-link">Tourist Visa</a>
-            <a href="freelance.html" class="mob-link">Freelance Visa</a>
-            <a href="maid.html" class="mob-link">Maid Visa</a>
+            <a href="visa.html?service=business-visa" class="mob-link">Business Visa</a>
+            <a href="visa.html?service=investor-visa" class="mob-link">Investor Visa</a>
+            <a href="visa.html?service=employment-visa" class="mob-link">Employment Visa</a>
+            <a href="visa.html?service=family-visa" class="mob-link">Family Visa</a>
+            <a href="visa.html?service=tourist-visa" class="mob-link">Tourist Visa</a>
+            <a href="visa.html?service=freelance-visa" class="mob-link">Freelance Visa</a>
+            <a href="visa.html?service=maid-visa" class="mob-link">Maid Visa</a>
         </div>
 
         <!-- Notarization -->
@@ -910,15 +1000,15 @@
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </div>
         <div class="mob-sub-links">
-            <a href="poa.html" class="mob-link">Power of Attorney</a>
-            <a href="moa.html" class="mob-link">MOA &amp; Amendments</a>
-            <a href="mou.html" class="mob-link">MOU</a>
-            <a href="noc.html" class="mob-link">NOC</a>
-            <a href="legal.html" class="mob-link">Legal Notices</a>
-            <a href="wills.html" class="mob-link">Wills &amp; Agreements</a>
-            <a href="undertaking.html" class="mob-link">Undertaking Letters</a>
-            <a href="affidavit.html" class="mob-link">Sworn Affidavits</a>
-            <a href="court.html" class="mob-link">Court Memorandum</a>
+            <a href="notarization.html?service=poa" class="mob-link">Power of Attorney</a>
+            <a href="notarization.html?service=moa" class="mob-link">MOA &amp; Amendments</a>
+            <a href="notarization.html?service=mou" class="mob-link">MOU</a>
+            <a href="notarization.html?service=noc" class="mob-link">NOC</a>
+            <a href="notarization.html?service=legal" class="mob-link">Legal Notices</a>
+            <a href="notarization.html?service=wills" class="mob-link">Wills &amp; Agreements</a>
+            <a href="notarization.html?service=undertaking" class="mob-link">Undertaking Letters</a>
+            <a href="notarization.html?service=affidavit" class="mob-link">Sworn Affidavits</a>
+            <a href="notarization.html?service=court" class="mob-link">Court Memorandum</a>
         </div>
 
         <div style="padding: 20px;">
@@ -934,7 +1024,7 @@
     <div class="hero-inner">
         <div class="hero-left">
             <div class="hero-icon"><i class="fa-solid fa-file-shield"></i></div>
-            <h2>Attestation Services</h2>
+            <h2>Attestation Services</h1>
             <p>Fast and reliable MEA, Embassy, HRD, Apostille and State attestation services for educational, commercial and personal documents.</p>
             <a href="#" class="hero-readmore">Read more</a>
         </div>
@@ -945,7 +1035,7 @@
 <!-- ── MAIN LAYOUT ── -->
 <div class="main-layout">
     <div class="main-content">
-        <div id="service-title-head" class="service-title-head"></div>
+        <h2 id="service-title-head" class="service-title-head" style="margin:0; font-size:28px; font-weight:700;"></h2>
         <div id="service-content-area" class="service-content-area">
             <div id="dynamic-service-body"><p style="color:#6b7280;">Loading attestation services...</p></div>
         </div>
@@ -975,7 +1065,7 @@
             <!-- Logo & About -->
             <div class="footer-col">
                 <div class="footer-logo">
-                    <img src="assets/logo2nd.PNG" alt="Masterpiece Logo" />
+                    <img src="assets/logo2nd.webp" alt="Masterpiece Logo" />
                 </div>
                 <p style="color:#94a3b8; line-height:1.7; max-width:280px; margin-bottom:24px;">
                     Your trusted partner for Translation, Attestation, Business Setup, Visa &amp; Notarization services.
