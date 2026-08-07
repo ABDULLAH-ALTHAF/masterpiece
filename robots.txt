@@ -25,3 +25,6 @@ User-agent: CCBot
 Disallow: /
 
 Sitemap: https://masterpiecegcc.com/sitemap.xml
+
+
+
