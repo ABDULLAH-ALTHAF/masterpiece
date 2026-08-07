@@ -24,4 +24,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://masterpieceuae.com/sitemap.xml
+Sitemap: https://masterpiecegcc.com/sitemap.xml
