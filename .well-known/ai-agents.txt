@@ -1,0 +1,5 @@
+User-agent: *
+Contact: gcc.masterpiece@gmail.com
+Sitemap: https://masterpieceuae.com/sitemap.xml
+Info-URL: https://masterpieceuae.com/llms.txt
+Description: Machine-readable instructions and site index for AI agents visiting Masterpiece Typing & Travels LLC.
